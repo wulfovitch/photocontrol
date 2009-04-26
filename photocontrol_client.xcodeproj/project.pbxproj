@@ -1,0 +1,404 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* ClientAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* ClientAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+		28C286E10D94DF7D0034E888 /* PHCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* PHCRootViewController.m */; };
+		3A07C26A0F7FC88A005CEAC2 /* PHCAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A07C2690F7FC88A005CEAC2 /* PHCAboutViewController.xib */; };
+		3A07C26F0F7FC8F1005CEAC2 /* offis.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A07C26E0F7FC8F1005CEAC2 /* offis.png */; };
+		3A07C2710F7FC8F8005CEAC2 /* uni-ol.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A07C2700F7FC8F8005CEAC2 /* uni-ol.png */; };
+		3A07C27B0F7FCAFC005CEAC2 /* PHCAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A07C27A0F7FCAFC005CEAC2 /* PHCAboutViewController.m */; };
+		3A1250A20EDA1A5B0018C8EE /* synchron_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1250A10EDA1A5B0018C8EE /* synchron_icon.png */; };
+		3A1250D50EDA1FA50018C8EE /* coverflow_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1250D40EDA1FA50018C8EE /* coverflow_icon.png */; };
+		3A1250DB0EDA26270018C8EE /* iMac.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1250DA0EDA26270018C8EE /* iMac.png */; };
+		3A1250E20EDAC9270018C8EE /* icon_synchron.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1250E00EDAC9270018C8EE /* icon_synchron.png */; };
+		3A1250E30EDAC9270018C8EE /* icon_asynchron.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1250E10EDAC9270018C8EE /* icon_asynchron.png */; };
+		3A1251B40EDAD4E50018C8EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1251B00EDAD4E50018C8EE /* CoreGraphics.framework */; };
+		3A1251B50EDAD4E50018C8EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1251B10EDAD4E50018C8EE /* Foundation.framework */; };
+		3A1251B60EDAD4E50018C8EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1251B20EDAD4E50018C8EE /* QuartzCore.framework */; };
+		3A1251B70EDAD4E50018C8EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1251B30EDAD4E50018C8EE /* UIKit.framework */; };
+		3A6182870EC357470010C928 /* PHCDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6182860EC357470010C928 /* PHCDirectoryViewController.m */; };
+		3A6182F90EC379F80010C928 /* PHCConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6182F80EC379F80010C928 /* PHCConnectionManager.m */; };
+		3A695FA00F9E3C4B0053D0C7 /* photocontrol-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A695F9F0F9E3C4B0053D0C7 /* photocontrol-icon.png */; };
+		3A8ADAB10F1A92900016647F /* PHCScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8ADAAF0F1A92900016647F /* PHCScrollView.m */; };
+		3AB02CD70F3FA37C009FB5BF /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AB02CD50F3FA37C009FB5BF /* help.png */; };
+		3AB02CD80F3FA37C009FB5BF /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AB02CD60F3FA37C009FB5BF /* about.png */; };
+		3AB02D660F3FA812009FB5BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AB02D640F3FA812009FB5BF /* Localizable.strings */; };
+		3AD37A0D0EC255B600C9DF2A /* PHCClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD37A0A0EC255B600C9DF2A /* PHCClientViewController.m */; };
+		3AD37A0E0EC255B600C9DF2A /* SimpleCocoaClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD37A0C0EC255B600C9DF2A /* SimpleCocoaClient.m */; };
+		3AD37A4A0EC2578600C9DF2A /* ClientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD37A490EC2578600C9DF2A /* ClientViewController.xib */; };
+		3AE8E5160EC3AEB000ED05CD /* picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AE8E5150EC3AEB000ED05CD /* picture.png */; };
+		3AE8E5180EC3AF1100ED05CD /* computer.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AE8E5170EC3AF1100ED05CD /* computer.png */; };
+		3AE8E51A0EC3AF2F00ED05CD /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AE8E5190EC3AF2F00ED05CD /* folder.png */; };
+		3AEDA0D30F2A98D500B8B0CD /* PHCRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEDA0D20F2A98D500B8B0CD /* PHCRootViewController.xib */; };
+		3AFCA80B0FA0FD56001C437E /* introduction.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AFCA80A0FA0FD56001C437E /* introduction.png */; };
+		3AFCA8120FA10783001C437E /* introduction-de.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AFCA8100FA10783001C437E /* introduction-de.png */; };
+		3AFCA8470FA10ECB001C437E /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AFCA8460FA10ECB001C437E /* background.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D3623240D0F684500981E51 /* ClientAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClientAppDelegate.h; path = Classes/ClientAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* ClientAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClientAppDelegate.m; path = Classes/ClientAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* photocontrol_client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photocontrol_client.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28A0AAE50D9B0CCF005BE974 /* photocontrol_client_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photocontrol_client_Prefix.pch; sourceTree = "<group>"; };
+		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28C286DF0D94DF7D0034E888 /* PHCRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCRootViewController.h; sourceTree = "<group>"; };
+		28C286E00D94DF7D0034E888 /* PHCRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHCRootViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3A07C2690F7FC88A005CEAC2 /* PHCAboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PHCAboutViewController.xib; sourceTree = "<group>"; };
+		3A07C26E0F7FC8F1005CEAC2 /* offis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = offis.png; sourceTree = "<group>"; };
+		3A07C2700F7FC8F8005CEAC2 /* uni-ol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "uni-ol.png"; sourceTree = "<group>"; };
+		3A07C2790F7FCAFC005CEAC2 /* PHCAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCAboutViewController.h; sourceTree = "<group>"; };
+		3A07C27A0F7FCAFC005CEAC2 /* PHCAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHCAboutViewController.m; sourceTree = "<group>"; };
+		3A1250A10EDA1A5B0018C8EE /* synchron_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = synchron_icon.png; sourceTree = "<group>"; };
+		3A1250D40EDA1FA50018C8EE /* coverflow_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coverflow_icon.png; sourceTree = "<group>"; };
+		3A1250DA0EDA26270018C8EE /* iMac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iMac.png; sourceTree = "<group>"; };
+		3A1250E00EDAC9270018C8EE /* icon_synchron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_synchron.png; sourceTree = "<group>"; };
+		3A1250E10EDAC9270018C8EE /* icon_asynchron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_asynchron.png; sourceTree = "<group>"; };
+		3A1251B00EDAD4E50018C8EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3A1251B10EDAD4E50018C8EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3A1251B20EDAD4E50018C8EE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3A1251B30EDAD4E50018C8EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3A6182850EC357470010C928 /* PHCDirectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCDirectoryViewController.h; sourceTree = "<group>"; };
+		3A6182860EC357470010C928 /* PHCDirectoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHCDirectoryViewController.m; sourceTree = "<group>"; };
+		3A6182F70EC379F80010C928 /* PHCConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCConnectionManager.h; sourceTree = "<group>"; };
+		3A6182F80EC379F80010C928 /* PHCConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHCConnectionManager.m; sourceTree = "<group>"; };
+		3A695F9F0F9E3C4B0053D0C7 /* photocontrol-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photocontrol-icon.png"; sourceTree = "<group>"; };
+		3A8ADAAF0F1A92900016647F /* PHCScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHCScrollView.m; sourceTree = "<group>"; };
+		3A8ADAB00F1A92900016647F /* PHCScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCScrollView.h; sourceTree = "<group>"; };
+		3AB02CD50F3FA37C009FB5BF /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };
+		3AB02CD60F3FA37C009FB5BF /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
+		3AB02D650F3FA812009FB5BF /* de */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		3AB02D6B0F3FA82A009FB5BF /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		3AD37A090EC255B600C9DF2A /* PHCClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCClientViewController.h; sourceTree = "<group>"; };
+		3AD37A0A0EC255B600C9DF2A /* PHCClientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHCClientViewController.m; sourceTree = "<group>"; };
+		3AD37A0B0EC255B600C9DF2A /* SimpleCocoaClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleCocoaClient.h; path = Classes/SimpleCocoaClient.h; sourceTree = "<group>"; };
+		3AD37A0C0EC255B600C9DF2A /* SimpleCocoaClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleCocoaClient.m; path = Classes/SimpleCocoaClient.m; sourceTree = "<group>"; };
+		3AD37A490EC2578600C9DF2A /* ClientViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClientViewController.xib; sourceTree = "<group>"; };
+		3AE8E5150EC3AEB000ED05CD /* picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture.png; sourceTree = "<group>"; };
+		3AE8E5170EC3AF1100ED05CD /* computer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = computer.png; sourceTree = "<group>"; };
+		3AE8E5190EC3AF2F00ED05CD /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder.png; sourceTree = "<group>"; };
+		3AEDA0D20F2A98D500B8B0CD /* PHCRootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PHCRootViewController.xib; sourceTree = "<group>"; };
+		3AFCA80A0FA0FD56001C437E /* introduction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = introduction.png; sourceTree = "<group>"; };
+		3AFCA8100FA10783001C437E /* introduction-de.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "introduction-de.png"; sourceTree = "<group>"; };
+		3AFCA8460FA10ECB001C437E /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A1251B40EDAD4E50018C8EE /* CoreGraphics.framework in Frameworks */,
+				3A1251B50EDAD4E50018C8EE /* Foundation.framework in Frameworks */,
+				3A1251B60EDAD4E50018C8EE /* QuartzCore.framework in Frameworks */,
+				3A1251B70EDAD4E50018C8EE /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3A07C2790F7FCAFC005CEAC2 /* PHCAboutViewController.h */,
+				3A07C27A0F7FCAFC005CEAC2 /* PHCAboutViewController.m */,
+				28C286DF0D94DF7D0034E888 /* PHCRootViewController.h */,
+				28C286E00D94DF7D0034E888 /* PHCRootViewController.m */,
+				3A6182850EC357470010C928 /* PHCDirectoryViewController.h */,
+				3A6182860EC357470010C928 /* PHCDirectoryViewController.m */,
+				3AD37A090EC255B600C9DF2A /* PHCClientViewController.h */,
+				3AD37A0A0EC255B600C9DF2A /* PHCClientViewController.m */,
+				3A8ADAB00F1A92900016647F /* PHCScrollView.h */,
+				3A8ADAAF0F1A92900016647F /* PHCScrollView.m */,
+				3A6182F70EC379F80010C928 /* PHCConnectionManager.h */,
+				3A6182F80EC379F80010C928 /* PHCConnectionManager.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* photocontrol_client.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				3A6182840EC3550D0010C928 /* SimpleCocoaClient */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				3A1250A30EDA1A760018C8EE /* images */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* ClientAppDelegate.h */,
+				1D3623250D0F684500981E51 /* ClientAppDelegate.m */,
+				28A0AAE50D9B0CCF005BE974 /* photocontrol_client_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3AB02D640F3FA812009FB5BF /* Localizable.strings */,
+				3AEDA0D20F2A98D500B8B0CD /* PHCRootViewController.xib */,
+				3A07C2690F7FC88A005CEAC2 /* PHCAboutViewController.xib */,
+				3AD37A490EC2578600C9DF2A /* ClientViewController.xib */,
+				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A1251B00EDAD4E50018C8EE /* CoreGraphics.framework */,
+				3A1251B10EDAD4E50018C8EE /* Foundation.framework */,
+				3A1251B20EDAD4E50018C8EE /* QuartzCore.framework */,
+				3A1251B30EDAD4E50018C8EE /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A1250A30EDA1A760018C8EE /* images */ = {
+			isa = PBXGroup;
+			children = (
+				3AFCA80A0FA0FD56001C437E /* introduction.png */,
+				3AFCA8100FA10783001C437E /* introduction-de.png */,
+				3AFCA8460FA10ECB001C437E /* background.png */,
+				3A695F9F0F9E3C4B0053D0C7 /* photocontrol-icon.png */,
+				3A07C2700F7FC8F8005CEAC2 /* uni-ol.png */,
+				3AB02CD50F3FA37C009FB5BF /* help.png */,
+				3AB02CD60F3FA37C009FB5BF /* about.png */,
+				3A1250D40EDA1FA50018C8EE /* coverflow_icon.png */,
+				3A1250DA0EDA26270018C8EE /* iMac.png */,
+				3A1250A10EDA1A5B0018C8EE /* synchron_icon.png */,
+				3A07C26E0F7FC8F1005CEAC2 /* offis.png */,
+				3AE8E5190EC3AF2F00ED05CD /* folder.png */,
+				3A1250E00EDAC9270018C8EE /* icon_synchron.png */,
+				3A1250E10EDAC9270018C8EE /* icon_asynchron.png */,
+				3AE8E5170EC3AF1100ED05CD /* computer.png */,
+				3AE8E5150EC3AEB000ED05CD /* picture.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		3A6182840EC3550D0010C928 /* SimpleCocoaClient */ = {
+			isa = PBXGroup;
+			children = (
+				3AD37A0B0EC255B600C9DF2A /* SimpleCocoaClient.h */,
+				3AD37A0C0EC255B600C9DF2A /* SimpleCocoaClient.m */,
+			);
+			name = SimpleCocoaClient;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* photocontrol_client */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "photocontrol_client" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = photocontrol_client;
+			productName = photocontrol_client;
+			productReference = 1D6058910D05DD3D006BFB54 /* photocontrol_client.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "photocontrol_client" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+				de,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* photocontrol_client */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
+				3AD37A4A0EC2578600C9DF2A /* ClientViewController.xib in Resources */,
+				3AE8E5160EC3AEB000ED05CD /* picture.png in Resources */,
+				3AE8E5180EC3AF1100ED05CD /* computer.png in Resources */,
+				3AE8E51A0EC3AF2F00ED05CD /* folder.png in Resources */,
+				3A1250A20EDA1A5B0018C8EE /* synchron_icon.png in Resources */,
+				3A1250D50EDA1FA50018C8EE /* coverflow_icon.png in Resources */,
+				3A1250DB0EDA26270018C8EE /* iMac.png in Resources */,
+				3A1250E20EDAC9270018C8EE /* icon_synchron.png in Resources */,
+				3A1250E30EDAC9270018C8EE /* icon_asynchron.png in Resources */,
+				3AEDA0D30F2A98D500B8B0CD /* PHCRootViewController.xib in Resources */,
+				3AB02CD70F3FA37C009FB5BF /* help.png in Resources */,
+				3AB02CD80F3FA37C009FB5BF /* about.png in Resources */,
+				3AB02D660F3FA812009FB5BF /* Localizable.strings in Resources */,
+				3A07C26A0F7FC88A005CEAC2 /* PHCAboutViewController.xib in Resources */,
+				3A07C26F0F7FC8F1005CEAC2 /* offis.png in Resources */,
+				3A07C2710F7FC8F8005CEAC2 /* uni-ol.png in Resources */,
+				3A695FA00F9E3C4B0053D0C7 /* photocontrol-icon.png in Resources */,
+				3AFCA80B0FA0FD56001C437E /* introduction.png in Resources */,
+				3AFCA8120FA10783001C437E /* introduction-de.png in Resources */,
+				3AFCA8470FA10ECB001C437E /* background.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* ClientAppDelegate.m in Sources */,
+				28C286E10D94DF7D0034E888 /* PHCRootViewController.m in Sources */,
+				3AD37A0D0EC255B600C9DF2A /* PHCClientViewController.m in Sources */,
+				3AD37A0E0EC255B600C9DF2A /* SimpleCocoaClient.m in Sources */,
+				3A6182870EC357470010C928 /* PHCDirectoryViewController.m in Sources */,
+				3A6182F90EC379F80010C928 /* PHCConnectionManager.m in Sources */,
+				3A8ADAB10F1A92900016647F /* PHCScrollView.m in Sources */,
+				3A07C27B0F7FCAFC005CEAC2 /* PHCAboutViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3AB02D640F3FA812009FB5BF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AB02D650F3FA812009FB5BF /* de */,
+				3AB02D6B0F3FA82A009FB5BF /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = photocontrol_client_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = photocontrol_client;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = photocontrol_client_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = photocontrol_client;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wolfgang König";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = iphonesimulator2.2.1;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wolfgang König";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				PROVISIONING_PROFILE = "D1BCB36D-90A0-4B1A-BA90-96EE62B4ACB6";
+				SDKROOT = iphoneos2.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "photocontrol_client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "photocontrol_client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
