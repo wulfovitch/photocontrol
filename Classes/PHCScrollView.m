@@ -21,7 +21,7 @@
 			case 2:
 				if ([clientViewController currentPageInScrollView] > -1)
 				{
-					[clientViewController setPhoto:[NSString stringWithFormat:@"%@", [[[clientViewController conManager] currentPictures] objectAtIndex:[clientViewController currentPageInScrollView]]]];
+					[clientViewController setPhoto:[NSString stringWithFormat:@"%@", [[[PHCConnectionManager getConnectionManager] currentPictures] objectAtIndex:[clientViewController currentPageInScrollView]]]];
 				}
 				break;
 			default:

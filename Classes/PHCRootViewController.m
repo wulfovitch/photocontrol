@@ -200,7 +200,6 @@ enum {
     [services removeAllObjects];
 	NSLog(@"netservice count: %i", [services count]);
 	
-	//[[[PHCConnectionManager getConnectionManager] client] disconnect];
 	[PHCConnectionManager terminateConnectionManager];
 	
 	[self.navigationController popToRootViewControllerAnimated:YES];

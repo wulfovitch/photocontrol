@@ -49,15 +49,6 @@ static PHCConnectionManager *conManager = nil;
 	conManager = nil;
 }
 
-/*
-- (id)init {
-	[super init];
-	self.currentSubDirectories = [[NSMutableArray alloc] init];
-	self.currentPictures = [[NSMutableArray alloc] init];
-	return self;
-}
-*/
-
 - (void)dealloc {
 	[currentSubDirectories release];
 	[currentPictures release];
