@@ -5,7 +5,6 @@
 @implementation PHCRootViewController
 
 @synthesize directoryViewController;
-@synthesize conManager;
 
 // enum for sections in table view
 enum {
@@ -25,7 +24,7 @@ enum {
 	browser = [[NSNetServiceBrowser alloc] init];
     [browser setDelegate:self];
 	services = [[NSMutableArray array] retain];
-	conManager = [[PHCConnectionManager alloc] init];
+	[PHCConnectionManager getConnectionManager];
     
     [browser searchForServicesOfType:@"_photocontrol._tcp." inDomain:@""];
 	
@@ -50,7 +49,6 @@ enum {
 - (void)dealloc {
 	[browser release];
 	[services release];
-	[conManager release];
     [super dealloc];
 }
 
@@ -111,6 +109,7 @@ enum {
 			else
 				[cell setText: NSLocalizedString(@"DefaultPhotoServer", @"default name of an photo control server")];
 			[cell setImage:[UIImage imageNamed:@"iMac.png"]];
+			[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 		} else {
 			[cell setText: NSLocalizedString(@"NoServerFound", @"No server found")];
 			[cell setImage:nil];
@@ -123,7 +122,8 @@ enum {
 		if(indexPath.row == rowAbout)
 		{
 			[cell setText:NSLocalizedString(@"AboutThisApplication", @"about this Application")];
-			[cell setImage:[UIImage imageNamed:@"about.png"]];			
+			[cell setImage:[UIImage imageNamed:@"about.png"]];
+			[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 		}
 	}
 	
@@ -136,18 +136,6 @@ enum {
 	} else {
 		return NSLocalizedString(@"About", @"About");
 	}
-}
-
-- (UITableViewCellAccessoryType)tableView:(UITableView *)table accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath {
-	if(indexPath.section == sectionServer)
-	{
-		if([services count] < 1)
-		{
-			return UITableViewCellAccessoryNone;
-		}
-	}
-	
-	return UITableViewCellAccessoryDisclosureIndicator;
 }
 
 
@@ -166,7 +154,6 @@ enum {
 			
 			// connect to server
 			[self netServiceDidResolveAddress: [services objectAtIndex: [indexPath row]]];
-			[directoryViewController setConManager: self.conManager];
 			[directoryViewController setCurrentDirectory: @"/"];
 			[directoryViewController setCurrentDirectoryName: @"/"];
 			[directoryViewController refresh];
@@ -213,12 +200,16 @@ enum {
     [services removeAllObjects];
 	NSLog(@"netservice count: %i", [services count]);
 	
-	[[conManager client] disconnect];
+	//[[[PHCConnectionManager getConnectionManager] client] disconnect];
+	[PHCConnectionManager terminateConnectionManager];
 	
 	[self.navigationController popToRootViewControllerAnimated:YES];
 	
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"connection lost", @"The connection to the server seems to be lost. Please restart the application and establish the connection again!") 
-												   delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+													message:NSLocalizedString(@"connection lost", @"The connection to the server seems to be lost. Please restart the application and establish the connection again!") 
+												   delegate:self
+										  cancelButtonTitle:@"OK"
+										  otherButtonTitles:nil];
 	[alert show];
 	[alert release];
 	
@@ -271,11 +262,11 @@ enum {
 		
 		if (ipAddressString && portString)
 		{
-			[conManager setServerIP: ipAddressString];
-			[conManager setServerPort: portString];
-			SimpleCocoaClient *client = [[SimpleCocoaClient alloc] initWithHost:[conManager serverIP] port:[[conManager serverPort] intValue] delegate:conManager];
-			[conManager setClient: client];
-			[[conManager client] connect];
+			[[PHCConnectionManager getConnectionManager] setServerIP: ipAddressString];
+			[[PHCConnectionManager getConnectionManager] setServerPort: portString];
+			SimpleCocoaClient *client = [[SimpleCocoaClient alloc] initWithHost:[[PHCConnectionManager getConnectionManager] serverIP] port:[[[PHCConnectionManager getConnectionManager] serverPort] intValue] delegate:[PHCConnectionManager getConnectionManager]];
+			[[PHCConnectionManager getConnectionManager] setClient: client];
+			[[[PHCConnectionManager getConnectionManager] client] connect];
 			[client release];
 		}
 	}

@@ -6,7 +6,6 @@
 
 @implementation PHCClientViewController
 
-@synthesize conManager;
 @synthesize currentDirectory;
 @synthesize currentDirectoryName;
 @synthesize scrollView;
@@ -125,7 +124,7 @@
 // timer for receiving the images for the case the server was busy
 - (void)receivingPicturesTimer:(NSTimer *)timer
 {
-	if([conManager isReceiving])
+	if([[PHCConnectionManager getConnectionManager] isReceiving])
 	{
 		nothingReceivedCounter++;
 		NSLog(@"nothing received: %d", nothingReceivedCounter);
@@ -195,7 +194,7 @@
 		{
 			if(synchronious)
 			{
-				[self setPhoto:[NSString stringWithFormat:@"%@", [[self.conManager currentPictures] objectAtIndex:newPage]]];
+				[self setPhoto:[NSString stringWithFormat:@"%@", [[[PHCConnectionManager getConnectionManager] currentPictures] objectAtIndex:newPage]]];
 			}
 		}
 
@@ -247,8 +246,12 @@
 		UIImageView *iView = (UIImageView *)[scrollView viewWithTag:PHOTOTAGSSTART+photoNr];
 		if(iView == nil)
 		{
-			NSString *path = [NSString stringWithFormat:@"http://%@:55598%@%@", [conManager serverIP], currentDirectory, [[self.conManager currentPictures] objectAtIndex:photoNr]];
-			NSURL *url = [NSURL URLWithString:path];
+			NSURL *url = [[NSURL alloc] initWithScheme:@"http" 
+												  host:[NSString stringWithFormat:@"%@:%@", [[PHCConnectionManager getConnectionManager] serverIP], @"55598"]
+												  path:[NSString stringWithFormat:@"%@%@", currentDirectory, [[[PHCConnectionManager getConnectionManager] currentPictures] objectAtIndex:photoNr]]];
+			
+			//NSString *path = [NSString stringWithFormat:@"http://%@:55598%@%@", [conManager serverIP], currentDirectory, [[self.conManager currentPictures] objectAtIndex:photoNr]];
+			//NSURL *url = [NSURL URLWithString:path];
 			NSData *data = [[NSData alloc] initWithContentsOfURL:url];
 			UIImage *smallImage = [[UIImage alloc] initWithData:data];
 			if (smallImage)
@@ -266,6 +269,7 @@
 			}
 			[smallImage release];
 			[data release];
+			[url release];
 		}
 	}
 
@@ -284,7 +288,7 @@
 
 -(void)setPhoto:(NSString *)photo
 {
-	[[conManager client] sendString:[NSString stringWithFormat:@"%@%@\n", currentDirectory, photo]];
+	[[[PHCConnectionManager getConnectionManager] client] sendString:[NSString stringWithFormat:@"%@%@\n", currentDirectory, photo]];
 }
 
 @end

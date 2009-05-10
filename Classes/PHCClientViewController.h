@@ -6,7 +6,6 @@
 @interface PHCClientViewController : UIViewController <UIScrollViewDelegate, UITabBarControllerDelegate> {
 	IBOutlet PHCScrollView *scrollView;
 	
-	PHCConnectionManager *conManager;
 	int pictureNumber;
 	
 	NSString *currentDirectory;
@@ -29,7 +28,6 @@
 @property (nonatomic, retain) PHCScrollView *scrollView;
 @property (nonatomic, retain) NSString *currentDirectory;
 @property (nonatomic, retain) NSString *currentDirectoryName;
-@property (nonatomic, retain) PHCConnectionManager *conManager;
 @property int imageCount;
 @property int currentPicture;
 @property BOOL synchronious;

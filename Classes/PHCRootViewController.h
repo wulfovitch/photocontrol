@@ -6,11 +6,8 @@
 	PHCDirectoryViewController *directoryViewController;
 	NSNetServiceBrowser *browser;
 	NSMutableArray *services;
-	
-	PHCConnectionManager *conManager;
 }
 @property (nonatomic, retain) PHCDirectoryViewController *directoryViewController;
-@property (nonatomic, retain) PHCConnectionManager *conManager;
 
 - (void)refresh:(id)sender;
 - (void)helpSelector;

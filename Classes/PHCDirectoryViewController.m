@@ -8,7 +8,6 @@
 @synthesize currentDirectory;
 @synthesize currentDirectoryName;
 @synthesize picturesOfCurrentDirectory;
-@synthesize conManager;
 @synthesize dirViewController;
 @synthesize cvc;
 @synthesize nothingReceivedCounter;
@@ -43,10 +42,10 @@ enum {
 # pragma mark methods for the tableView
 
 - (void)refresh {
-	[conManager setRefreshing];
-	[[conManager client] sendString:@"### SEND DIRECTORY ###\n"];
-	[[conManager client] sendString:[NSString stringWithFormat:@"%@\n", currentDirectory]];
-	[[conManager client] sendString:@"### END SEND DIRECTORY ###\n"];
+	[[PHCConnectionManager getConnectionManager] setRefreshing];
+	[[[PHCConnectionManager getConnectionManager] client] sendString:@"### SEND DIRECTORY ###\n"];
+	[[[PHCConnectionManager getConnectionManager] client] sendString:[NSString stringWithFormat:@"%@\n", currentDirectory]];
+	[[[PHCConnectionManager getConnectionManager] client] sendString:@"### END SEND DIRECTORY ###\n"];
 	[[self tableView] reloadData];
 }
 
@@ -60,7 +59,7 @@ enum {
 	if (section == selectionOfCurrentDirectory) {
 		return 1;
 	} else {
-		if([conManager isReceiving])
+		if([[PHCConnectionManager getConnectionManager] isReceiving])
 		{
 			// setup timer if the server is busy
 			reloadDirectoriesTimer = [NSTimer scheduledTimerWithTimeInterval: 0.1
@@ -83,7 +82,7 @@ enum {
 
 - (void)handleTimer:(NSTimer *)timer
 {
-	if([conManager isReceiving])
+	if([[PHCConnectionManager getConnectionManager] isReceiving])
 	{
 		nothingReceivedCounter++;
 		NSLog(@"nothing received: %d", nothingReceivedCounter);
@@ -98,8 +97,8 @@ enum {
 	} else {
 		nothingReceivedCounter = 0;
 		NSLog(@"invalidate");
-		imageCount = [self.conManager imageCount];
-		NSArray *dirArray = [[NSArray alloc] initWithArray:[self.conManager currentSubDirectories]];
+		imageCount = [[PHCConnectionManager getConnectionManager] imageCount];
+		NSArray *dirArray = [[NSArray alloc] initWithArray:[[PHCConnectionManager getConnectionManager] currentSubDirectories]];
 		[self setSubDirectories: dirArray];
 		[dirArray release];
 		[self.tableView reloadData];
@@ -121,11 +120,13 @@ enum {
 	{
 		if (imageCount > 0)
 		{
-			cell.text = NSLocalizedString(@"SelectThisDirectory", @"Select this directory!");
-			cell.image = [UIImage imageNamed:@"picture.png"];
+			[cell setText: NSLocalizedString(@"SelectThisDirectory", @"Select this directory!")];
+			[cell setImage: [UIImage imageNamed:@"picture.png"]];
+			[cell setAccessoryType: UITableViewCellAccessoryDisclosureIndicator];
 		} else {
-			cell.text = NSLocalizedString(@"NoPhotosInThisDirectory", @"No Photos in this directory!");
-			cell.image = nil;
+			[cell setText: NSLocalizedString(@"NoPhotosInThisDirectory", @"No Photos in this directory!")];
+			[cell setImage: nil];
+			[cell setAccessoryType: UITableViewCellAccessoryNone];
 		}
 	}
 	
@@ -134,11 +135,13 @@ enum {
 	{
 		if (noSubDirectories)
 		{
-			cell.text = NSLocalizedString(@"NoSubdirectories", @"No Subdirectories!");
-			cell.image = nil;
+			[cell setText: NSLocalizedString(@"NoSubdirectories", @"No Subdirectories!")];
+			[cell setImage:nil];
+			[cell setAccessoryType:UITableViewCellAccessoryNone];
 		} else {
-			cell.text = [self.subDirectories objectAtIndex: indexPath.row];
-			cell.image = [UIImage imageNamed:@"folder.png"];
+			[cell setText: [self.subDirectories objectAtIndex: indexPath.row]];
+			[cell setImage: [UIImage imageNamed:@"folder.png"]];
+			[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 		}
 	}
     return cell;
@@ -152,20 +155,6 @@ enum {
 	}
 }
 
-- (UITableViewCellAccessoryType)tableView:(UITableView *)table accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath {
-	if(indexPath.section == selectionOfCurrentDirectory)
-	{
-		if (imageCount > 0)
-			return UITableViewCellAccessoryDisclosureIndicator;
-	}
-	if(indexPath.section == selectionOfDirectory)
-	{
-		if (!noSubDirectories)
-			return UITableViewCellAccessoryDisclosureIndicator;
-	}
-	return UITableViewCellAccessoryNone;
-}
-
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
@@ -174,17 +163,16 @@ enum {
 		if (imageCount > 0)
 		{
 			// requesting picturelist from server
-			[conManager setRefreshing];
-			[[conManager client] sendString:@"### START PICTURELIST ###\n"];
-			[[conManager client] sendString:[NSString stringWithFormat:@"%@\n", self.currentDirectory]];
-			[[conManager client] sendString:@"### END PICTURELIST ###\n"];
+			[[PHCConnectionManager getConnectionManager] setRefreshing];
+			[[[PHCConnectionManager getConnectionManager] client] sendString:@"### START PICTURELIST ###\n"];
+			[[[PHCConnectionManager getConnectionManager] client] sendString:[NSString stringWithFormat:@"%@\n", self.currentDirectory]];
+			[[[PHCConnectionManager getConnectionManager] client] sendString:@"### END PICTURELIST ###\n"];
 				
 			// set the back button title of the pushed view controller
 			[self.navigationItem setTitle:NSLocalizedString(@"BackButtonCurrentDirectorySelected", @"back")];
 
 			cvc = [[PHCClientViewController alloc] initWithNibName:@"ClientViewController" bundle:[NSBundle mainBundle] synchron:YES];
 			
-			[cvc setConManager: self.conManager];
 			[cvc setCurrentDirectory: [NSString stringWithFormat:@"%@", self.currentDirectory]];
 			[cvc setCurrentDirectoryName: self.currentDirectoryName];
 			[cvc setImageCount: imageCount];
@@ -213,7 +201,6 @@ enum {
 				// set the back button title of the pushed view controller
 				[self.navigationItem setTitle:NSLocalizedString(@"BackButtonDirectorySelected", @"back")];
 				
-				[[self dirViewController] setConManager: self.conManager];
 				[[self dirViewController] setCurrentDirectory: [NSString stringWithFormat:@"%@%@/", [self currentDirectory], [[self subDirectories] objectAtIndex: indexPath.row]]];
 				[[self dirViewController] setCurrentDirectoryName: [[self subDirectories] objectAtIndex: indexPath.row]];
 				[[self dirViewController] refresh];

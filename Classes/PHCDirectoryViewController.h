@@ -12,7 +12,6 @@
 	NSArray *picturesOfCurrentDirectory;
 	int imageCount;
 	
-	PHCConnectionManager *conManager;
 	NSTimer *reloadDirectoriesTimer;
 	
 	PHCDirectoryViewController *dirViewController;
@@ -29,7 +28,6 @@
 @property (nonatomic, retain) NSString *currentDirectory;
 @property (nonatomic, retain) NSString *currentDirectoryName;
 @property (nonatomic, retain) NSArray *picturesOfCurrentDirectory;
-@property (nonatomic, retain) PHCConnectionManager *conManager;
 @property (nonatomic, retain) PHCDirectoryViewController *dirViewController;
 @property (nonatomic, retain) PHCClientViewController *cvc;
 @property int nothingReceivedCounter;

@@ -29,6 +29,8 @@
 @property (nonatomic, retain) NSMutableArray *currentSubDirectories;
 @property (nonatomic, retain) NSMutableArray *currentPictures;
 
++ (PHCConnectionManager *)getConnectionManager;
++ (void)terminateConnectionManager;
 - (BOOL)isReceiving;
 - (void)setRefreshing;
 - (NSInteger)imageCount;

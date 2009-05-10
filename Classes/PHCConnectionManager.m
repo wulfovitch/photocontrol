@@ -1,5 +1,22 @@
 #import "PHCConnectionManager.h"
 
+@interface PHCConnectionManager (Private)  
+- (id)initConnectionManager;
+@end 
+
+@implementation PHCConnectionManager (Private)
+
+- (id)initConnectionManager {
+	[super init];
+	self.currentSubDirectories = [[NSMutableArray alloc] init];
+	self.currentPictures = [[NSMutableArray alloc] init];
+	return self;
+}
+
+@end
+
+
+
 @implementation PHCConnectionManager
 
 @synthesize client;
@@ -16,12 +33,30 @@ enum {
 	gettingPictureList
 };
 
+
+// instance of the singleton
+static PHCConnectionManager *conManager = nil;
+
++ (PHCConnectionManager *)getConnectionManager {
+	if(conManager == NULL)
+	{
+		conManager = [[self alloc] initConnectionManager];
+	}
+	return conManager;
+}
+
++ (void)terminateConnectionManager {
+	conManager = nil;
+}
+
+/*
 - (id)init {
 	[super init];
 	self.currentSubDirectories = [[NSMutableArray alloc] init];
 	self.currentPictures = [[NSMutableArray alloc] init];
 	return self;
 }
+*/
 
 - (void)dealloc {
 	[currentSubDirectories release];

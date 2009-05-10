@@ -337,7 +337,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = photocontrol_client_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				PRODUCT_NAME = photocontrol_client;
+				PRODUCT_NAME = photocontrol;
 			};
 			name = Debug;
 		};
