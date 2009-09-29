@@ -35,4 +35,7 @@
 - (void)setRefreshing;
 - (NSInteger)imageCount;
 
+// delegate methods
+-(void)processMessage:(NSString *)message fromClient:(SimpleCocoaClient *)fromClient;
+
 @end

@@ -32,8 +32,8 @@
 		3AB02CD70F3FA37C009FB5BF /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AB02CD50F3FA37C009FB5BF /* help.png */; };
 		3AB02CD80F3FA37C009FB5BF /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AB02CD60F3FA37C009FB5BF /* about.png */; };
 		3AB02D660F3FA812009FB5BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AB02D640F3FA812009FB5BF /* Localizable.strings */; };
+		3ACEC86C10717748002B6F96 /* SimpleCocoaClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEC86B10717748002B6F96 /* SimpleCocoaClient.m */; };
 		3AD37A0D0EC255B600C9DF2A /* PHCClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD37A0A0EC255B600C9DF2A /* PHCClientViewController.m */; };
-		3AD37A0E0EC255B600C9DF2A /* SimpleCocoaClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD37A0C0EC255B600C9DF2A /* SimpleCocoaClient.m */; };
 		3AD37A4A0EC2578600C9DF2A /* ClientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD37A490EC2578600C9DF2A /* ClientViewController.xib */; };
 		3AE8E5160EC3AEB000ED05CD /* picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AE8E5150EC3AEB000ED05CD /* picture.png */; };
 		3AE8E5180EC3AF1100ED05CD /* computer.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AE8E5170EC3AF1100ED05CD /* computer.png */; };
@@ -79,10 +79,10 @@
 		3AB02CD60F3FA37C009FB5BF /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
 		3AB02D650F3FA812009FB5BF /* de */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		3AB02D6B0F3FA82A009FB5BF /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		3ACEC86A10717748002B6F96 /* SimpleCocoaClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleCocoaClient.h; path = Classes/SimpleCocoaClient.h; sourceTree = "<group>"; };
+		3ACEC86B10717748002B6F96 /* SimpleCocoaClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleCocoaClient.m; path = Classes/SimpleCocoaClient.m; sourceTree = "<group>"; };
 		3AD37A090EC255B600C9DF2A /* PHCClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCClientViewController.h; sourceTree = "<group>"; };
 		3AD37A0A0EC255B600C9DF2A /* PHCClientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHCClientViewController.m; sourceTree = "<group>"; };
-		3AD37A0B0EC255B600C9DF2A /* SimpleCocoaClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleCocoaClient.h; path = Classes/SimpleCocoaClient.h; sourceTree = "<group>"; };
-		3AD37A0C0EC255B600C9DF2A /* SimpleCocoaClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleCocoaClient.m; path = Classes/SimpleCocoaClient.m; sourceTree = "<group>"; };
 		3AD37A490EC2578600C9DF2A /* ClientViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClientViewController.xib; sourceTree = "<group>"; };
 		3AE8E5150EC3AEB000ED05CD /* picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture.png; sourceTree = "<group>"; };
 		3AE8E5170EC3AF1100ED05CD /* computer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = computer.png; sourceTree = "<group>"; };
@@ -212,8 +212,8 @@
 		3A6182840EC3550D0010C928 /* SimpleCocoaClient */ = {
 			isa = PBXGroup;
 			children = (
-				3AD37A0B0EC255B600C9DF2A /* SimpleCocoaClient.h */,
-				3AD37A0C0EC255B600C9DF2A /* SimpleCocoaClient.m */,
+				3ACEC86A10717748002B6F96 /* SimpleCocoaClient.h */,
+				3ACEC86B10717748002B6F96 /* SimpleCocoaClient.m */,
 			);
 			name = SimpleCocoaClient;
 			sourceTree = "<group>";
@@ -304,11 +304,11 @@
 				1D3623260D0F684500981E51 /* ClientAppDelegate.m in Sources */,
 				28C286E10D94DF7D0034E888 /* PHCRootViewController.m in Sources */,
 				3AD37A0D0EC255B600C9DF2A /* PHCClientViewController.m in Sources */,
-				3AD37A0E0EC255B600C9DF2A /* SimpleCocoaClient.m in Sources */,
 				3A6182870EC357470010C928 /* PHCDirectoryViewController.m in Sources */,
 				3A6182F90EC379F80010C928 /* PHCConnectionManager.m in Sources */,
 				3A8ADAB10F1A92900016647F /* PHCScrollView.m in Sources */,
 				3A07C27B0F7FCAFC005CEAC2 /* PHCAboutViewController.m in Sources */,
+				3ACEC86C10717748002B6F96 /* SimpleCocoaClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

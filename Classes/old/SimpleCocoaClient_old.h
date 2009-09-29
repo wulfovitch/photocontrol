@@ -1,9 +1,9 @@
 //  
 //  SimpleCocoaClient, a basic client class written in objectiv-c for use in cocoa applications
-//   -- v0.3 --
+//   -- v0.1 --
 //   SimpleCocoaClient.h
 //   ------------------------------------------------------
-//  | Created by David J. Koster, release 04.05.2009.      |
+//  | Created by David J. Koster, release 28.05.2008.      |
 //  | Copyright 2008 David J. Koster. All rights reserved. |
 //  | http://www.david-koster.de/code/simpleserver         |
 //  | code@david-koster.de for help or see:                |
@@ -40,7 +40,6 @@ enum SCCInit {
 };
 typedef enum SCCInit SCCInit;
 
-#define SCCDefaultConnectionTimeout 30
 
 @interface SimpleCocoaClient : NSObject {
 @private
@@ -51,10 +50,7 @@ typedef enum SCCInit SCCInit;
 	NSFileHandle *fileHandle;
 	BOOL		isConnected;
 	BOOL		hasBeenInitialized;
-	BOOL		stayingConnected;
-	//BOOL		waitingForReply;
 	int			connectionTimeout;
-	NSStringEncoding defaultStringEncoding;
 	
 }
 
@@ -70,10 +66,8 @@ typedef enum SCCInit SCCInit;
 
 - (BOOL)sendData:(NSData *)data;
 - (BOOL)sendString:(NSString *)string;
-- (BOOL)sendString:(NSString *)string withEncoding:(NSStringEncoding)encoding;
 
 - (BOOL)setNewHost:(NSString *)newHost andPort:(int)newPort;
-- (BOOL)isConnected;
 
 - (id)delegate;
 - (BOOL)setDelegate:(id)newDl;
@@ -82,11 +76,8 @@ typedef enum SCCInit SCCInit;
 - (BOOL)setRemoteHost:(NSString *)newHost;
 - (int)remotePort;
 - (BOOL)setRemotePort:(int)newPort;
-- (BOOL)stayingConnected;
-- (void)setStayingConnected:(BOOL)flag;
 - (int)connectionTimeout;
+- (void)defaultTimeout;
 - (void)setConnectionTimeout:(int)newTimeout;
-- (NSStringEncoding)defaultStringEncoding;
-- (void)setDefaultStringEncoding:(NSStringEncoding)encoding;
 
 @end

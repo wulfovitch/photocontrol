@@ -105,14 +105,14 @@ enum {
 		{
 			NSNetService *netService = [services objectAtIndex: [indexPath row]];
 			if([netService respondsToSelector:@selector(name)])
-				[cell setText: [netService name]];
+				[[cell textLabel] setText: [netService name]];
 			else
-				[cell setText: NSLocalizedString(@"DefaultPhotoServer", @"default name of an photo control server")];
-			[cell setImage:[UIImage imageNamed:@"iMac.png"]];
-			[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+				[[cell textLabel] setText: NSLocalizedString(@"DefaultPhotoServer", @"default name of an photo control server")];
+				[[cell imageView] setImage: [UIImage imageNamed:@"iMac.png"]];
+				[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 		} else {
-			[cell setText: NSLocalizedString(@"NoServerFound", @"No server found")];
-			[cell setImage:nil];
+			[[cell textLabel] setText: NSLocalizedString(@"NoServerFound", @"No server found")];
+			[[cell imageView] setImage:nil];
 		}
 	}
 	
@@ -121,8 +121,8 @@ enum {
 	{
 		if(indexPath.row == rowAbout)
 		{
-			[cell setText:NSLocalizedString(@"AboutThisApplication", @"about this Application")];
-			[cell setImage:[UIImage imageNamed:@"about.png"]];
+			[[cell textLabel] setText:NSLocalizedString(@"AboutThisApplication", @"about this Application")];
+			[[cell imageView] setImage:[UIImage imageNamed:@"about.png"]];
 			[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 		}
 	}
@@ -244,7 +244,7 @@ enum {
 			switch(socketAddress->sa_family) {
 				case AF_INET:
 					if (inet_ntop(AF_INET, &((struct sockaddr_in *)socketAddress)->sin_addr, buffer, sizeof(buffer))) {
-						ipAddressString = [NSString stringWithCString:buffer];
+						ipAddressString = [NSString stringWithCString:buffer encoding: NSASCIIStringEncoding];
 						portString = [NSString stringWithFormat:@"%d", ntohs(((struct sockaddr_in *)socketAddress)->sin_port)];
 					}
 					

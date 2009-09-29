@@ -120,12 +120,12 @@ enum {
 	{
 		if (imageCount > 0)
 		{
-			[cell setText: NSLocalizedString(@"SelectThisDirectory", @"Select this directory!")];
-			[cell setImage: [UIImage imageNamed:@"picture.png"]];
+			[[cell textLabel] setText: NSLocalizedString(@"SelectThisDirectory", @"Select this directory!")];
+			[[cell imageView] setImage: [UIImage imageNamed:@"picture.png"]];
 			[cell setAccessoryType: UITableViewCellAccessoryDisclosureIndicator];
 		} else {
-			[cell setText: NSLocalizedString(@"NoPhotosInThisDirectory", @"No Photos in this directory!")];
-			[cell setImage: nil];
+			[[cell textLabel] setText: NSLocalizedString(@"NoPhotosInThisDirectory", @"No Photos in this directory!")];
+			[[cell imageView] setImage: nil];
 			[cell setAccessoryType: UITableViewCellAccessoryNone];
 		}
 	}
@@ -135,12 +135,12 @@ enum {
 	{
 		if (noSubDirectories)
 		{
-			[cell setText: NSLocalizedString(@"NoSubdirectories", @"No Subdirectories!")];
-			[cell setImage:nil];
+			[[cell textLabel] setText: NSLocalizedString(@"NoSubdirectories", @"No Subdirectories!")];
+			[[cell imageView] setImage:nil];
 			[cell setAccessoryType:UITableViewCellAccessoryNone];
 		} else {
-			[cell setText: [self.subDirectories objectAtIndex: indexPath.row]];
-			[cell setImage: [UIImage imageNamed:@"folder.png"]];
+			[[cell textLabel] setText: [self.subDirectories objectAtIndex: indexPath.row]];
+			[[cell imageView] setImage: [UIImage imageNamed:@"folder.png"]];
 			[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 		}
 	}

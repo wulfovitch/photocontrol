@@ -6,7 +6,7 @@
 @synthesize applicationCanBeDownloadedAt;
 @synthesize applicationWasCreatedBy;
 @synthesize supportedBy;
-@synthesize cameraIconBy;
+@synthesize cameraIconBy; 
 
 @synthesize urlToOpen;
 

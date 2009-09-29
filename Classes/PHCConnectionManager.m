@@ -58,6 +58,15 @@ static PHCConnectionManager *conManager = nil;
 # pragma mark -
 # pragma mark delegate methods for receiving strings
 
+-(void)processData:(NSData *)data fromClient:(SimpleCocoaClient *)fromClient {
+	NSLog(@"incoming data");
+	
+	NSString *received = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+	[self processMessage:received fromClient:fromClient];
+	[received release];
+}
+
+
 -(void)processMessage:(NSString *)message fromClient:(SimpleCocoaClient *)fromClient {
 	NSLog(@"%@", message);
 	NSArray *messageArray = [message componentsSeparatedByString:@"\n"];
@@ -128,6 +137,8 @@ static PHCConnectionManager *conManager = nil;
 		}
 	}
 }
+
+
 
 # pragma mark -
 # pragma mark getter / setter

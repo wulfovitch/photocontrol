@@ -1,6 +1,6 @@
 //  
 //  SimpleCocoaClient, a basic client class written in objectiv-c for use in cocoa applications
-//   -- v0.3 --
+//   -- v0.1 --
 //   SimpleCocoaClient.m
 //   ------------------------------------------------------
 //  | Created by David J. Koster, release 28.05.2008.      |
@@ -75,22 +75,15 @@
 	self = [super init];
 	isConnected = NO;
 	hasBeenInitialized = YES;
-	stayingConnected = YES;
-	// stayingConnected = NO;
-	//waitingForReply = NO;
-	defaultStringEncoding = NSUTF8StringEncoding;
 	return self;
 }
 
 - (id)initWithHost:(NSString *)initHost port:(int)initPort delegate:(id)initDl
 {
 	if(self = [self init]) {
-		if(![self setRemoteHost:initHost])
-			return nil;
-		if(![self setRemotePort:initPort])
-			return nil;
-		if(![self setDelegate:initDl])
-			return nil;
+		[self setRemoteHost:initHost];
+		[self setRemotePort:initPort];
+		[self setDelegate:initDl];
 	} else {
 		return nil;
 	}
@@ -100,9 +93,9 @@
 - (void)dealloc
 {
 	if(isConnected) {
-		[self disconnect];
+		[[NSNotificationCenter defaultCenter] removeObserver:self];
+		[fileHandle release];
 	}
-	[remoteHost release];
 	[delegate release];
 	[super dealloc];
 }
@@ -138,10 +131,10 @@
 		addr4.sin_family = AF_INET;
 		addr4.sin_port = htons(remotePort);
 		inet_pton(AF_INET, [remoteHost UTF8String], &addr4.sin_addr);
-
+		
 		NSData *address4 = [NSData dataWithBytes:&addr4 length:sizeof(addr4)];
 		
-		int retVal = CFSocketConnectToAddress(socket, (CFDataRef)address4, [self connectionTimeout]);
+		int retVal = CFSocketConnectToAddress(socket, (CFDataRef)address4, connectionTimeout);
 		
 		if(retVal == kCFSocketError)
 			return SCCInitError_NoConnection;
@@ -157,35 +150,24 @@
 	fileHandle = [[NSFileHandle alloc] initWithFileDescriptor:filedescriptor
 											   closeOnDealloc:YES];
 	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-	if([self stayingConnected]) {
-		[nc addObserver:self
-			   selector:@selector(dataReceivedNotification:)
-				   name:NSFileHandleReadCompletionNotification
-				 object:nil];
-		[fileHandle readInBackgroundAndNotify];
-	} else {
-		[nc addObserver:self
-			   selector:@selector(dataReceivedNotification:)
-				   name:NSFileHandleReadToEndOfFileCompletionNotification
-				 object:nil];
-		[fileHandle readToEndOfFileInBackgroundAndNotify];
-	}
+	[nc addObserver:self
+		   selector:@selector(dataReceivedNotification:)
+			   name:NSFileHandleReadCompletionNotification
+			 object:nil];
+	[fileHandle readInBackgroundAndNotify];
+	
 	isConnected = YES;
 	return SCCInitOK;
 }
 
 - (void)disconnect
 {
-	if([delegate respondsToSelector:@selector(connectionWillClose:)])
-		[delegate performSelector:@selector(connectionWillClose:) withObject:self];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	CFSocketRef socket = CFSocketCreateWithNative(kCFAllocatorDefault,[fileHandle fileDescriptor],1,NULL,NULL);
 	CFSocketInvalidate(socket);
 	CFRelease(socket);
 	[fileHandle release];
 	isConnected = NO;
-	if([delegate respondsToSelector:@selector(connectionDidClose:)])
-		[delegate performSelector:@selector(connectionDidClose:) withObject:self];
 }
 
 #pragma mark Sending and Receiving
@@ -204,30 +186,25 @@
 
 - (BOOL)sendString:(NSString *)string
 {
-	return [self sendData:[string dataUsingEncoding:[self defaultStringEncoding]]];
-}
-
-- (BOOL)sendString:(NSString *)string withEncoding:(NSStringEncoding)encoding
-{
-	return [self sendData:[string dataUsingEncoding:encoding]];
+	return [self sendData:[string dataUsingEncoding:NSASCIIStringEncoding]];
 }
 
 - (void)dataReceivedNotification:(NSNotification *)notification
 {
 	NSData *data = [[notification userInfo] objectForKey:NSFileHandleNotificationDataItem];
-	if([data length] == 0) {
+	
+	if ([data length] == 0) {
+		// NSFileHandle's way of telling us that the client closed the connection
 		[self disconnect];
-		return;
-	}
-	if([self stayingConnected]) {
-		[fileHandle readInBackgroundAndNotify];
 	} else {
-		[self disconnect];
+		[fileHandle readInBackgroundAndNotify];
+		NSString *received = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+		//NSLog(@"%@",received);
+		if([delegate respondsToSelector:@selector(processMessage:fromClient:)]) {
+			[delegate processMessage:received fromClient:self];
+		}
 	}
-	if([delegate respondsToSelector:@selector(processData:fromClient:)])
-		[delegate performSelector:@selector(processData:fromClient:) withObject:data withObject:self];
 }
-
 
 #pragma mark Other Methods
 
@@ -240,16 +217,11 @@
 {
 	if(isConnected)
 		return NO;
-	if(![self setRemoteHost:newHost])
-		return NO;
-	if(![self setRemotePort:newPort])
-		return NO;
+	[self setRemoteHost:newHost];
+	[self setRemotePort:newPort];
 	return YES;
 }
 
-- (BOOL)isConnected {
-	return isConnected;
-}
 #pragma mark Accessor Methods
 
 - (id)delegate
@@ -286,8 +258,6 @@
 	if(isConnected)
 		return NO;
 	newHost = [newHost retain];
-	if(!newHost)
-		return NO;
 	
 	struct in_addr IPaddr;
 	struct hostent *host;
@@ -321,36 +291,19 @@
 	return YES;
 }
 
-- (BOOL)stayingConnected
-{
-	return stayingConnected;
-}
-
-- (void)setStayingConnected:(BOOL)flag
-{
-	stayingConnected = flag;
-}
-
 - (int)connectionTimeout
 {
-	if(connectionTimeout < 1)
-		return SCCDefaultConnectionTimeout;
 	return connectionTimeout;
+}
+
+- (void)defaultTimeout
+{
+	connectionTimeout = 30;
 }
 
 - (void)setConnectionTimeout:(int)newTimeout
 {
 	connectionTimeout = newTimeout;
-}
-
-- (NSStringEncoding)defaultStringEncoding
-{
-	return defaultStringEncoding;
-}
-
-- (void)setDefaultStringEncoding:(NSStringEncoding)encoding
-{
-	defaultStringEncoding = encoding;
 }
 
 @end
