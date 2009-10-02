@@ -14,7 +14,6 @@
 	
 	// content of the current directory
 	NSMutableArray *currentSubDirectories;
-	NSMutableArray *currentPictures;
 	
 	// Boolean
 	BOOL refreshing;
@@ -27,7 +26,6 @@
 @property (nonatomic, retain) NSString *serverPort;
 @property (nonatomic, retain) NSString *currentDirectory;
 @property (nonatomic, retain) NSMutableArray *currentSubDirectories;
-@property (nonatomic, retain) NSMutableArray *currentPictures;
 
 + (PHCConnectionManager *)getConnectionManager;
 + (void)terminateConnectionManager;

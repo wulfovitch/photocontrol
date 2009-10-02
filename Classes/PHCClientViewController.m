@@ -194,7 +194,7 @@
 		{
 			if(synchronious)
 			{
-				[self setPhoto:[NSString stringWithFormat:@"%@", [[[PHCConnectionManager getConnectionManager] currentPictures] objectAtIndex:newPage]]];
+				[self setPhoto:[NSString stringWithFormat:@"%d", newPage]];
 			}
 		}
 
@@ -246,12 +246,13 @@
 		UIImageView *iView = (UIImageView *)[scrollView viewWithTag:PHOTOTAGSSTART+photoNr];
 		if(iView == nil)
 		{
+			//NSURL *url = [[NSURL alloc] initWithScheme:@"http" 
+			//									  host:[NSString stringWithFormat:@"%@:%@", [[PHCConnectionManager getConnectionManager] serverIP], @"55598"]
+			//									  path:[NSString stringWithFormat:@"%@%@", currentDirectory, [[[PHCConnectionManager getConnectionManager] currentPictures] objectAtIndex:photoNr]]];
 			NSURL *url = [[NSURL alloc] initWithScheme:@"http" 
 												  host:[NSString stringWithFormat:@"%@:%@", [[PHCConnectionManager getConnectionManager] serverIP], @"55598"]
-												  path:[NSString stringWithFormat:@"%@%@", currentDirectory, [[[PHCConnectionManager getConnectionManager] currentPictures] objectAtIndex:photoNr]]];
+												  path:[NSString stringWithFormat:@"%@%@", currentDirectory, photoNumber]];
 			
-			//NSString *path = [NSString stringWithFormat:@"http://%@:55598%@%@", [conManager serverIP], currentDirectory, [[self.conManager currentPictures] objectAtIndex:photoNr]];
-			//NSURL *url = [NSURL URLWithString:path];
 			NSData *data = [[NSData alloc] initWithContentsOfURL:url];
 			UIImage *smallImage = [[UIImage alloc] initWithData:data];
 			if (smallImage)

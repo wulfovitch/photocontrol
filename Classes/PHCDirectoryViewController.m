@@ -19,7 +19,7 @@ enum {
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	self.title = currentDirectory;
+	self.title = currentDirectoryName;
 	noSubDirectories = false;
 	nothingReceivedCounter = 0;
 	
@@ -30,7 +30,7 @@ enum {
 
 - (void)viewWillAppear:(BOOL)animated {
 	// make sure that every view controller has the right title
-	[self.navigationItem setTitle:self.currentDirectory];
+	[self.navigationItem setTitle:self.currentDirectoryName];
 	[super viewWillAppear:animated];
 }
 
@@ -139,7 +139,13 @@ enum {
 			[[cell imageView] setImage:nil];
 			[cell setAccessoryType:UITableViewCellAccessoryNone];
 		} else {
-			[[cell textLabel] setText: [self.subDirectories objectAtIndex: indexPath.row]];
+			NSString *cellText = [self.subDirectories objectAtIndex: indexPath.row];
+			NSRange delimiter = [cellText rangeOfString:@"_"];
+			
+			//NSLog(@"substringtoindex: %@", [cellText substringToIndex: delimiter.location]);
+			//NSLog(@"substringfromindex: %@", [cellText substringFromIndex: delimiter.location+1]);
+
+			[[cell textLabel] setText: [cellText substringFromIndex: delimiter.location+1]];
 			[[cell imageView] setImage: [UIImage imageNamed:@"folder.png"]];
 			[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 		}
@@ -162,12 +168,6 @@ enum {
 	{
 		if (imageCount > 0)
 		{
-			// requesting picturelist from server
-			[[PHCConnectionManager getConnectionManager] setRefreshing];
-			[[[PHCConnectionManager getConnectionManager] client] sendString:@"### START PICTURELIST ###\n"];
-			[[[PHCConnectionManager getConnectionManager] client] sendString:[NSString stringWithFormat:@"%@\n", self.currentDirectory]];
-			[[[PHCConnectionManager getConnectionManager] client] sendString:@"### END PICTURELIST ###\n"];
-				
 			// set the back button title of the pushed view controller
 			[self.navigationItem setTitle:NSLocalizedString(@"BackButtonCurrentDirectorySelected", @"back")];
 
@@ -193,7 +193,6 @@ enum {
 			if(self.dirViewController == nil || self.dirViewController.currentDirectory !=  [NSString stringWithFormat:@"%@%@/", self.currentDirectory, [self.subDirectories objectAtIndex: indexPath.row]])
 			{
 				PHCDirectoryViewController *view = [[PHCDirectoryViewController alloc] initWithStyle:UITableViewStyleGrouped];
-				//DirectoryViewController *view = [[DirectoryViewController alloc] initWithNibName:@"DirectoryViewController" bundle:[NSBundle mainBundle]];
 				
 				[self setDirViewController: view];
 				[view release];
@@ -201,8 +200,11 @@ enum {
 				// set the back button title of the pushed view controller
 				[self.navigationItem setTitle:NSLocalizedString(@"BackButtonDirectorySelected", @"back")];
 				
-				[[self dirViewController] setCurrentDirectory: [NSString stringWithFormat:@"%@%@/", [self currentDirectory], [[self subDirectories] objectAtIndex: indexPath.row]]];
-				[[self dirViewController] setCurrentDirectoryName: [[self subDirectories] objectAtIndex: indexPath.row]];
+				NSString *subDirText = [self.subDirectories objectAtIndex: indexPath.row];
+				NSRange delimiter = [subDirText rangeOfString:@"_"];
+				NSLog(@"currentDirectoryName: %@", currentDirectoryName);
+				[[self dirViewController] setCurrentDirectory: [NSString stringWithFormat:@"%@/", [subDirText substringToIndex: delimiter.location]]];
+				[[self dirViewController] setCurrentDirectoryName: [subDirText substringFromIndex: delimiter.location+1]];
 				[[self dirViewController] refresh];
 			}
 			[self.navigationController pushViewController:self.dirViewController animated:YES];

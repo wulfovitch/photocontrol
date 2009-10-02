@@ -9,7 +9,6 @@
 - (id)initConnectionManager {
 	[super init];
 	self.currentSubDirectories = [[NSMutableArray alloc] init];
-	self.currentPictures = [[NSMutableArray alloc] init];
 	return self;
 }
 
@@ -24,13 +23,11 @@
 @synthesize serverPort;
 @synthesize currentDirectory;
 @synthesize currentSubDirectories;
-@synthesize currentPictures;
 
 enum {
 	receivingNothing = 0,
 	gettingSubDirs,
-	gettingImageCount,
-	gettingPictureList
+	gettingImageCount
 };
 
 
@@ -51,7 +48,6 @@ static PHCConnectionManager *conManager = nil;
 
 - (void)dealloc {
 	[currentSubDirectories release];
-	[currentPictures release];
 	[super dealloc];
 }
 
@@ -90,12 +86,6 @@ static PHCConnectionManager *conManager = nil;
 						NSLog(@"starting imagecount");
 						receiving = gettingImageCount;
 					}
-					if([messageLine isEqualToString:@"### START PICTURELIST ###"])
-					{
-						NSLog(@"starting picturelist");
-						receiving = gettingPictureList;
-						[currentPictures removeAllObjects];
-					}
 					break;
 					
 				case gettingSubDirs:
@@ -119,18 +109,6 @@ static PHCConnectionManager *conManager = nil;
 					} else {
 						NSLog(@"imagecount: '%@'", messageLine);
 						imageCount = [messageLine intValue];
-					}
-					break;
-				
-				case gettingPictureList:
-					if([messageLine isEqualToString:@"### END PICTURELIST ###"])
-					{
-						NSLog(@"stopping picturelist");
-						receiving = receivingNothing;
-						refreshing = false;
-					} else {
-						NSLog(@"picturelist: '%@'", messageLine);
-						[currentPictures addObject:messageLine];
 					}
 					break;
 			}
