@@ -145,7 +145,7 @@ enum {
 			//NSLog(@"substringtoindex: %@", [cellText substringToIndex: delimiter.location]);
 			//NSLog(@"substringfromindex: %@", [cellText substringFromIndex: delimiter.location+1]);
 
-			[[cell textLabel] setText: [cellText substringFromIndex: delimiter.location+1]];
+			[[cell textLabel] setText: [[cellText substringFromIndex: delimiter.location+1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 			[[cell imageView] setImage: [UIImage imageNamed:@"folder.png"]];
 			[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 		}
@@ -204,7 +204,7 @@ enum {
 				NSRange delimiter = [subDirText rangeOfString:@"_"];
 				NSLog(@"currentDirectoryName: %@", currentDirectoryName);
 				[[self dirViewController] setCurrentDirectory: [NSString stringWithFormat:@"%@/", [subDirText substringToIndex: delimiter.location]]];
-				[[self dirViewController] setCurrentDirectoryName: [subDirText substringFromIndex: delimiter.location+1]];
+				[[self dirViewController] setCurrentDirectoryName: [[subDirText substringFromIndex: delimiter.location+1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 				[[self dirViewController] refresh];
 			}
 			[self.navigationController pushViewController:self.dirViewController animated:YES];
