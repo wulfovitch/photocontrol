@@ -17,11 +17,11 @@
 //	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-#import "PHCScrollView.h"
-#import "PHCClientViewController.h"
+#import "ScrollView.h"
+#import "PhotoViewController.h"
 
 
-@implementation PHCScrollView
+@implementation ScrollView
 
 @synthesize clientViewController;
 

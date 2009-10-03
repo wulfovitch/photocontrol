@@ -21,7 +21,7 @@
 #import "SimpleCocoaClient.h"
 
 
-@interface PHCConnectionManager : NSObject {
+@interface ConnectionManager : NSObject {
 	
 	// SimpleCocoaClient settings
 	SimpleCocoaClient *client;
@@ -46,7 +46,7 @@
 @property (nonatomic, retain) NSString *currentDirectory;
 @property (nonatomic, retain) NSMutableArray *currentSubDirectories;
 
-+ (PHCConnectionManager *)getConnectionManager;
++ (ConnectionManager *)getConnectionManager;
 + (void)terminateConnectionManager;
 - (BOOL)isReceiving;
 - (void)setRefreshing;

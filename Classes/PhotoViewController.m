@@ -17,13 +17,13 @@
 //	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-#import "PHCClientViewController.h"
+#import "PhotoViewController.h"
 
 #define INDICATOR_VIEW	1997
 #define UISCROLLVIEW_INTRODUCTION 1998
 #define PHOTOTAGSSTART 1999
 
-@implementation PHCClientViewController
+@implementation PhotoViewController
 
 @synthesize currentDirectory;
 @synthesize currentDirectoryName;
@@ -143,7 +143,7 @@
 // timer for receiving the images for the case the server was busy
 - (void)receivingPicturesTimer:(NSTimer *)timer
 {
-	if([[PHCConnectionManager getConnectionManager] isReceiving])
+	if([[ConnectionManager getConnectionManager] isReceiving])
 	{
 		nothingReceivedCounter++;
 		NSLog(@"nothing received: %d", nothingReceivedCounter);
@@ -265,11 +265,8 @@
 		UIImageView *iView = (UIImageView *)[scrollView viewWithTag:PHOTOTAGSSTART+photoNr];
 		if(iView == nil)
 		{
-			//NSURL *url = [[NSURL alloc] initWithScheme:@"http" 
-			//									  host:[NSString stringWithFormat:@"%@:%@", [[PHCConnectionManager getConnectionManager] serverIP], @"55598"]
-			//									  path:[NSString stringWithFormat:@"%@%@", currentDirectory, [[[PHCConnectionManager getConnectionManager] currentPictures] objectAtIndex:photoNr]]];
 			NSURL *url = [[NSURL alloc] initWithScheme:@"http" 
-												  host:[NSString stringWithFormat:@"%@:%@", [[PHCConnectionManager getConnectionManager] serverIP], @"55598"]
+												  host:[NSString stringWithFormat:@"%@:%@", [[ConnectionManager getConnectionManager] serverIP], @"55598"]
 												  path:[NSString stringWithFormat:@"%@%@", currentDirectory, photoNumber]];
 			
 			NSData *data = [[NSData alloc] initWithContentsOfURL:url];
@@ -308,7 +305,7 @@
 
 -(void)setPhoto:(NSString *)photo
 {
-	[[[PHCConnectionManager getConnectionManager] client] sendString:[NSString stringWithFormat:@"%@%@\n", currentDirectory, photo]];
+	[[[ConnectionManager getConnectionManager] client] sendString:[NSString stringWithFormat:@"%@%@\n", currentDirectory, photo]];
 }
 
 @end

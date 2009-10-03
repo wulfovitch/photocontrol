@@ -18,40 +18,49 @@
 
 
 #import <UIKit/UIKit.h>
-#import "PHCConnectionManager.h"
 #import "SimpleCocoaClient.h"
-#import "PHCClientViewController.h"
+#import "ConnectionManager.h"
+#import "ScrollView.h"
 
-@interface PHCDirectoryViewController : UITableViewController {
+@interface PhotoViewController : UIViewController <UIScrollViewDelegate, UITabBarControllerDelegate> {
+	IBOutlet ScrollView *scrollView;
 	
-	NSArray *subDirectories;
-	NSArray *pictures;
+	int pictureNumber;
+	
 	NSString *currentDirectory;
 	NSString *currentDirectoryName;
-	NSArray *picturesOfCurrentDirectory;
-	int imageCount;
-	
-	NSTimer *reloadDirectoriesTimer;
-	
-	PHCDirectoryViewController *dirViewController;
-	PHCClientViewController *cvc;
-	
-	BOOL noSubDirectories;
 	NSTimer *getPicturesTimer;
+	
+	BOOL progressShowing;
+	int imageCount;
+	int currentPageInScrollView;
+	
+	NSMutableArray *loadedImagesInScrollView;
+	BOOL synchronious;
+	int currentPicture;
+	
+	UIActivityIndicatorView *activityIndicator;
 	
 	int nothingReceivedCounter;
 }
 
-@property (nonatomic, retain) NSArray *subDirectories;
-@property (nonatomic, retain) NSArray *pictures;
+@property (nonatomic, retain) ScrollView *scrollView;
 @property (nonatomic, retain) NSString *currentDirectory;
 @property (nonatomic, retain) NSString *currentDirectoryName;
-@property (nonatomic, retain) NSArray *picturesOfCurrentDirectory;
-@property (nonatomic, retain) PHCDirectoryViewController *dirViewController;
-@property (nonatomic, retain) PHCClientViewController *cvc;
+@property int imageCount;
+@property int currentPicture;
+@property BOOL synchronious;
+@property (nonatomic, retain) NSMutableArray *loadedImagesInScrollView;
+@property (readonly) int currentPageInScrollView;
 @property int nothingReceivedCounter;
 
-- (void) handleTimer: (NSTimer *) timer;
-- (void)refresh;
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil synchron:(BOOL)synchron;
+- (void)setPhoto:(NSString *)photo;
+- (void)loadScrollViewWithPage:(int)pageNumber;
+- (void)loadImage:(NSString *) photoNumber;
+- (void) done;
+- (void)receivingPicturesTimer:(NSTimer *)timer;
+- (void)changeSynchroniousMode;
 @end
+

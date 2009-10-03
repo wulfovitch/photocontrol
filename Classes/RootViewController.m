@@ -17,11 +17,11 @@
 //	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-#import "PHCRootViewController.h"
+#import "RootViewController.h"
 #import <arpa/inet.h>
 #import <netinet/in.h>
 
-@implementation PHCRootViewController
+@implementation RootViewController
 
 @synthesize directoryViewController;
 
@@ -43,7 +43,7 @@ enum {
 	browser = [[NSNetServiceBrowser alloc] init];
     [browser setDelegate:self];
 	services = [[NSMutableArray array] retain];
-	[PHCConnectionManager getConnectionManager];
+	[ConnectionManager getConnectionManager];
     
     [browser searchForServicesOfType:@"_photocontrol._tcp." inDomain:@""];
 	
@@ -161,7 +161,7 @@ enum {
 	{
 		if([services count] > 0)
 		{		
-			PHCDirectoryViewController *view = [[PHCDirectoryViewController alloc] initWithStyle:UITableViewStyleGrouped];
+			DirectoryViewController *view = [[DirectoryViewController alloc] initWithStyle:UITableViewStyleGrouped];
 			
 			self.directoryViewController = view;
 			[view release];
@@ -185,7 +185,7 @@ enum {
 	{
 		if(indexPath.row == rowAbout)
 		{
-			PHCAboutViewController *view = [[PHCAboutViewController alloc] init];
+			AboutViewController *view = [[AboutViewController alloc] init];
 			[self.navigationController pushViewController:view animated:YES];
 			[view release];
 		}
@@ -217,7 +217,7 @@ enum {
     [services removeAllObjects];
 	NSLog(@"netservice count: %i", [services count]);
 	
-	[PHCConnectionManager terminateConnectionManager];
+	[ConnectionManager terminateConnectionManager];
 	
 	[self.navigationController popToRootViewControllerAnimated:YES];
 	
@@ -278,11 +278,11 @@ enum {
 		
 		if (ipAddressString && portString)
 		{
-			[[PHCConnectionManager getConnectionManager] setServerIP: ipAddressString];
-			[[PHCConnectionManager getConnectionManager] setServerPort: portString];
-			SimpleCocoaClient *client = [[SimpleCocoaClient alloc] initWithHost:[[PHCConnectionManager getConnectionManager] serverIP] port:[[[PHCConnectionManager getConnectionManager] serverPort] intValue] delegate:[PHCConnectionManager getConnectionManager]];
-			[[PHCConnectionManager getConnectionManager] setClient: client];
-			[[[PHCConnectionManager getConnectionManager] client] connect];
+			[[ConnectionManager getConnectionManager] setServerIP: ipAddressString];
+			[[ConnectionManager getConnectionManager] setServerPort: portString];
+			SimpleCocoaClient *client = [[SimpleCocoaClient alloc] initWithHost:[[ConnectionManager getConnectionManager] serverIP] port:[[[ConnectionManager getConnectionManager] serverPort] intValue] delegate:[ConnectionManager getConnectionManager]];
+			[[ConnectionManager getConnectionManager] setClient: client];
+			[[[ConnectionManager getConnectionManager] client] connect];
 			[client release];
 		}
 	}

@@ -18,8 +18,6 @@
 
 
 #import "ClientAppDelegate.h"
-#import "PHCRootViewController.h"
-#import "PHCConnectionManager.h"
 
 
 @implementation ClientAppDelegate

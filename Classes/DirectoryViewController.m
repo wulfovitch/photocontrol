@@ -17,9 +17,9 @@
 //	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-#import "PHCDirectoryViewController.h"
+#import "DirectoryViewController.h"
 
-@implementation PHCDirectoryViewController
+@implementation DirectoryViewController
 
 
 @synthesize subDirectories;
@@ -61,10 +61,10 @@ enum {
 # pragma mark methods for the tableView
 
 - (void)refresh {
-	[[PHCConnectionManager getConnectionManager] setRefreshing];
-	[[[PHCConnectionManager getConnectionManager] client] sendString:@"### SEND DIRECTORY ###\n"];
-	[[[PHCConnectionManager getConnectionManager] client] sendString:[NSString stringWithFormat:@"%@\n", currentDirectory]];
-	[[[PHCConnectionManager getConnectionManager] client] sendString:@"### END SEND DIRECTORY ###\n"];
+	[[ConnectionManager getConnectionManager] setRefreshing];
+	[[[ConnectionManager getConnectionManager] client] sendString:@"### SEND DIRECTORY ###\n"];
+	[[[ConnectionManager getConnectionManager] client] sendString:[NSString stringWithFormat:@"%@\n", currentDirectory]];
+	[[[ConnectionManager getConnectionManager] client] sendString:@"### END SEND DIRECTORY ###\n"];
 	[[self tableView] reloadData];
 }
 
@@ -78,7 +78,7 @@ enum {
 	if (section == selectionOfCurrentDirectory) {
 		return 1;
 	} else {
-		if([[PHCConnectionManager getConnectionManager] isReceiving])
+		if([[ConnectionManager getConnectionManager] isReceiving])
 		{
 			// setup timer if the server is busy
 			reloadDirectoriesTimer = [NSTimer scheduledTimerWithTimeInterval: 0.1
@@ -101,7 +101,7 @@ enum {
 
 - (void)handleTimer:(NSTimer *)timer
 {
-	if([[PHCConnectionManager getConnectionManager] isReceiving])
+	if([[ConnectionManager getConnectionManager] isReceiving])
 	{
 		nothingReceivedCounter++;
 		NSLog(@"nothing received: %d", nothingReceivedCounter);
@@ -116,8 +116,8 @@ enum {
 	} else {
 		nothingReceivedCounter = 0;
 		NSLog(@"invalidate");
-		imageCount = [[PHCConnectionManager getConnectionManager] imageCount];
-		NSArray *dirArray = [[NSArray alloc] initWithArray:[[PHCConnectionManager getConnectionManager] currentSubDirectories]];
+		imageCount = [[ConnectionManager getConnectionManager] imageCount];
+		NSArray *dirArray = [[NSArray alloc] initWithArray:[[ConnectionManager getConnectionManager] currentSubDirectories]];
 		[self setSubDirectories: dirArray];
 		[dirArray release];
 		[self.tableView reloadData];
@@ -190,7 +190,7 @@ enum {
 			// set the back button title of the pushed view controller
 			[self.navigationItem setTitle:NSLocalizedString(@"BackButtonCurrentDirectorySelected", @"back")];
 
-			cvc = [[PHCClientViewController alloc] initWithNibName:@"ClientViewController" bundle:[NSBundle mainBundle] synchron:YES];
+			cvc = [[PhotoViewController alloc] initWithNibName:@"PhotoViewController" bundle:[NSBundle mainBundle] synchron:YES];
 			
 			[cvc setCurrentDirectory: [NSString stringWithFormat:@"%@", self.currentDirectory]];
 			[cvc setCurrentDirectoryName: self.currentDirectoryName];
@@ -211,7 +211,7 @@ enum {
 		{
 			if(self.dirViewController == nil || self.dirViewController.currentDirectory !=  [NSString stringWithFormat:@"%@%@/", self.currentDirectory, [self.subDirectories objectAtIndex: indexPath.row]])
 			{
-				PHCDirectoryViewController *view = [[PHCDirectoryViewController alloc] initWithStyle:UITableViewStyleGrouped];
+				DirectoryViewController *view = [[DirectoryViewController alloc] initWithStyle:UITableViewStyleGrouped];
 				
 				[self setDirViewController: view];
 				[view release];

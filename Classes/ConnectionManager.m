@@ -17,13 +17,13 @@
 //	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-#import "PHCConnectionManager.h"
+#import "ConnectionManager.h"
 
-@interface PHCConnectionManager (Private)  
+@interface ConnectionManager (Private)  
 - (id)initConnectionManager;
 @end 
 
-@implementation PHCConnectionManager (Private)
+@implementation ConnectionManager (Private)
 
 - (id)initConnectionManager {
 	[super init];
@@ -35,7 +35,7 @@
 
 
 
-@implementation PHCConnectionManager
+@implementation ConnectionManager
 
 @synthesize client;
 @synthesize serverIP;
@@ -51,9 +51,9 @@ enum {
 
 
 // instance of the singleton
-static PHCConnectionManager *conManager = nil;
+static ConnectionManager *conManager = nil;
 
-+ (PHCConnectionManager *)getConnectionManager {
++ (ConnectionManager *)getConnectionManager {
 	if(conManager == NULL)
 	{
 		conManager = [[self alloc] initConnectionManager];

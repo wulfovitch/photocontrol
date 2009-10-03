@@ -17,9 +17,9 @@
 //	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #import <UIKit/UIKit.h>
-@class PHCRootViewController;
+@class RootViewController;
 
-@interface PHCAboutViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate> {
+@interface AboutViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate> {
 	// String where the to opened URL is stored
 	NSURL *urlToOpen;
 }

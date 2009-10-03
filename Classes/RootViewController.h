@@ -18,15 +18,15 @@
 
 
 #import <UIKit/UIKit.h>
-#import "PHCDirectoryViewController.h"
-#import "PHCAboutViewController.h"
+#import "DirectoryViewController.h"
+#import "AboutViewController.h"
 
-@interface PHCRootViewController : UITableViewController <UIActionSheetDelegate> {
-	PHCDirectoryViewController *directoryViewController;
+@interface RootViewController : UITableViewController <UIActionSheetDelegate> {
+	DirectoryViewController *directoryViewController;
 	NSNetServiceBrowser *browser;
 	NSMutableArray *services;
 }
-@property (nonatomic, retain) PHCDirectoryViewController *directoryViewController;
+@property (nonatomic, retain) DirectoryViewController *directoryViewController;
 
 - (void)refresh:(id)sender;
 - (void)helpSelector;

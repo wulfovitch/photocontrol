@@ -18,16 +18,16 @@
 
 
 #import <UIKit/UIKit.h>
-@class PHCClientViewController;
+@class PhotoViewController;
 
 /*
  * extends the functionality of UIScrollView to detect doubletaps
  */
 
-@interface PHCScrollView : UIScrollView {
-	PHCClientViewController *clientViewController;
+@interface ScrollView : UIScrollView {
+	PhotoViewController *clientViewController;
 }
 
-@property (nonatomic, retain) PHCClientViewController *clientViewController;
+@property (nonatomic, retain) PhotoViewController *clientViewController;
 
 @end
