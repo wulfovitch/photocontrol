@@ -1,90 +1,83 @@
-#import "PHCAboutViewController.h"
+//	photocontrol client
+//	see http://photocontrol.net for more information
+//
+//	Copyright (C) 2009  Wolfgang König
+//
+//	This program is free software: you can redistribute it and/or modify
+//	it under the terms of the GNU General Public License as published by
+//	the Free Software Foundation, either version 3 of the License, or
+//	(at your option) any later version.
+//
+//	This program is distributed in the hope that it will be useful,
+//	but WITHOUT ANY WARRANTY; without even the implied warranty of
+//	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//	GNU General Public License for more details.
+//
+//	You should have received a copy of the GNU General Public License
+//	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+
+#import "PHCAboutViewController.h"
 
 @implementation PHCAboutViewController
 
-@synthesize applicationCanBeDownloadedAt;
-@synthesize applicationWasCreatedBy;
-@synthesize supportedBy;
-@synthesize cameraIconBy; 
-
 @synthesize urlToOpen;
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-	
-	[applicationCanBeDownloadedAt setText:NSLocalizedString(@"The server application can be downloaded at:", @"The server application can be downloaded at:")];
-	[applicationWasCreatedBy setText:NSLocalizedString(@"Application was created by:", @"Application was created by:")];
-	[supportedBy setText:NSLocalizedString(@"supported by:", @"supported by:")];
-	[cameraIconBy setText:NSLocalizedString(@"Camera icon by:", @"Camera icon by:")];
-}
-
-- (void)viewWillAppear:(BOOL)animated
+- (void)loadView
 {
-	self.title = NSLocalizedString(@"About", @"About");
-	[super viewWillAppear:animated];
+	CGRect applicationFrame = [[UIScreen mainScreen] applicationFrame];
+	
+	UIWebView *webView = [[[UIWebView alloc] initWithFrame:applicationFrame] autorelease];
+	[webView setDelegate:self];
+	
+	self.view = webView;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
-    // Release anything that's not essential, such as cached data
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	NSString *path = [NSString pathWithComponents:[NSArray arrayWithObjects:[[NSBundle mainBundle] resourcePath], NSLocalizedString(@"aboutHTMLFile", @"about_en.html"), nil]];
+	NSURL *baseURL = [[[NSURL alloc] initFileURLWithPath:path] autorelease];
+	NSError *error;
+	[(UIWebView *)self.view loadHTMLString:[NSString stringWithContentsOfURL:baseURL encoding:NSUTF8StringEncoding error:&error] baseURL:baseURL];
 }
 
-
-- (void)dealloc {
-    [super dealloc];
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
--(IBAction)openURLofPhotoControlInSafari:(id)sender {
-	urlToOpen = NSLocalizedString(@"photocontrolWebsite", @"http://www.photocontrol.net");
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Safari will now open:", @"Safari will now open:") 
-													message:urlToOpen 
-												   delegate:self 
-										  cancelButtonTitle:NSLocalizedString(@"Cancel", @"Cancel")
-										  otherButtonTitles:NSLocalizedString(@"OK", @"OK"), nil];
-	[alert show];
-	[alert release];
+- (void)dealloc
+{
+	[super dealloc];
 }
 
-
--(IBAction)openURLofOffisInSafari:(id)sender {
-	urlToOpen = NSLocalizedString(@"offisWebsite", @"http://www.offis.de/index_e.php");
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Safari will now open:", @"Safari will now open:") 
-													message:urlToOpen 
-												   delegate:self 
-										  cancelButtonTitle:NSLocalizedString(@"Cancel", @"Cancel")
-										  otherButtonTitles:NSLocalizedString(@"OK", @"OK"), nil];
-	[alert show];
-	[alert release];
-}
-
--(IBAction)openURLofUniOLInSafari:(id)sender {
-	urlToOpen = NSLocalizedString(@"uniOLWebsite", @"http://www.uni-oldenburg.de/en/");
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Safari will now open:", @"Safari will now open:") 
-													message:urlToOpen 
-												   delegate:self 
-										  cancelButtonTitle:NSLocalizedString(@"Cancel", @"Cancel")
-										  otherButtonTitles:NSLocalizedString(@"OK", @"OK"), nil];
-	[alert show];
-	[alert release];
-}
-
--(IBAction)openURLofRefuelDesignInSafari:(id)sender {
-	urlToOpen = NSLocalizedString(@"refueldesign.com", @"http://refueldesign.com");
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Safari will now open:", @"Safari will now open:") 
-													message:urlToOpen 
-												   delegate:self 
-										  cancelButtonTitle:NSLocalizedString(@"Cancel", @"Cancel")
-										  otherButtonTitles:NSLocalizedString(@"OK", @"OK"), nil];
-	[alert show];
-	[alert release];
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+	NSURL *url = [request URL];
+	
+	if (![[url scheme] isEqualToString:@"file"])
+	{
+		self.urlToOpen = url;
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Safari will now open:", @"Safari will now open:") 
+														message:[url relativeString]
+													   delegate:self 
+											  cancelButtonTitle:NSLocalizedString(@"Cancel", @"Cancel")
+											  otherButtonTitles:NSLocalizedString(@"OK", @"OK"), nil];
+		[alert show];
+		[alert release];
+		
+		return NO;
+	}
+	
+	return YES;
 }
 
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	// the user clicked one of the OK/Cancel buttons
 	if (buttonIndex == 1) // OK button clicked
 	{
-		[[UIApplication sharedApplication] openURL:[NSURL URLWithString: urlToOpen]];
+		[[UIApplication sharedApplication] openURL:urlToOpen];
 	}
 	else
 	{

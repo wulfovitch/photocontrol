@@ -9,6 +9,10 @@
 //  | code@david-koster.de for help or see:                |
 //  | http://sourceforge.net/projects/simpleserver         |
 //   ------------------------------------------------------
+//	| slightly modified by Wolfgang König                  |
+//	| for the photocontrol client                          |
+//	| see http://photocontrol.net                          |
+//	 ------------------------------------------------------
 // 
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
