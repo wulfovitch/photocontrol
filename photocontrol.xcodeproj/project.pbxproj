@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,11 +13,7 @@
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		3A07C27B0F7FCAFC005CEAC2 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A07C27A0F7FCAFC005CEAC2 /* AboutViewController.m */; };
 		3A0B10BC1076DBFB00244927 /* about_de.html in Resources */ = {isa = PBXBuildFile; fileRef = 3A0B10BB1076DBFB00244927 /* about_de.html */; };
-		3A1250A20EDA1A5B0018C8EE /* synchron_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1250A10EDA1A5B0018C8EE /* synchron_icon.png */; };
-		3A1250D50EDA1FA50018C8EE /* coverflow_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1250D40EDA1FA50018C8EE /* coverflow_icon.png */; };
 		3A1250DB0EDA26270018C8EE /* iMac.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1250DA0EDA26270018C8EE /* iMac.png */; };
-		3A1250E20EDAC9270018C8EE /* icon_synchron.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1250E00EDAC9270018C8EE /* icon_synchron.png */; };
-		3A1250E30EDAC9270018C8EE /* icon_asynchron.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1250E10EDAC9270018C8EE /* icon_asynchron.png */; };
 		3A1251B40EDAD4E50018C8EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1251B00EDAD4E50018C8EE /* CoreGraphics.framework */; };
 		3A1251B50EDAD4E50018C8EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1251B10EDAD4E50018C8EE /* Foundation.framework */; };
 		3A1251B60EDAD4E50018C8EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1251B20EDAD4E50018C8EE /* QuartzCore.framework */; };
@@ -28,7 +24,7 @@
 		3A5ED8CC1077FEA100B3CC85 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A5ED8CB1077FEA100B3CC85 /* RootViewController.xib */; };
 		3A6182870EC357470010C928 /* DirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6182860EC357470010C928 /* DirectoryViewController.m */; };
 		3A6182F90EC379F80010C928 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6182F80EC379F80010C928 /* ConnectionManager.m */; };
-		3A695FA00F9E3C4B0053D0C7 /* photocontrol-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A695F9F0F9E3C4B0053D0C7 /* photocontrol-icon.png */; };
+		3A695FA00F9E3C4B0053D0C7 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A695F9F0F9E3C4B0053D0C7 /* Icon.png */; };
 		3A8ADAB10F1A92900016647F /* ScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8ADAAF0F1A92900016647F /* ScrollView.m */; };
 		3AB02CD70F3FA37C009FB5BF /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AB02CD50F3FA37C009FB5BF /* help.png */; };
 		3AB02CD80F3FA37C009FB5BF /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AB02CD60F3FA37C009FB5BF /* about.png */; };
@@ -48,7 +44,7 @@
 		1D3623240D0F684500981E51 /* ClientAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClientAppDelegate.h; path = Classes/ClientAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* ClientAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClientAppDelegate.m; path = Classes/ClientAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* photocontrol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photocontrol.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		28A0AAE50D9B0CCF005BE974 /* photocontrol_client_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photocontrol_client_Prefix.pch; sourceTree = "<group>"; };
+		28A0AAE50D9B0CCF005BE974 /* photocontrol_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photocontrol_Prefix.pch; sourceTree = "<group>"; };
 		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
@@ -56,11 +52,7 @@
 		3A07C2790F7FCAFC005CEAC2 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		3A07C27A0F7FCAFC005CEAC2 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		3A0B10BB1076DBFB00244927 /* about_de.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about_de.html; sourceTree = "<group>"; };
-		3A1250A10EDA1A5B0018C8EE /* synchron_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = synchron_icon.png; sourceTree = "<group>"; };
-		3A1250D40EDA1FA50018C8EE /* coverflow_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coverflow_icon.png; sourceTree = "<group>"; };
 		3A1250DA0EDA26270018C8EE /* iMac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iMac.png; sourceTree = "<group>"; };
-		3A1250E00EDAC9270018C8EE /* icon_synchron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_synchron.png; sourceTree = "<group>"; };
-		3A1250E10EDAC9270018C8EE /* icon_asynchron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_asynchron.png; sourceTree = "<group>"; };
 		3A1251B00EDAD4E50018C8EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3A1251B10EDAD4E50018C8EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3A1251B20EDAD4E50018C8EE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -73,7 +65,7 @@
 		3A6182860EC357470010C928 /* DirectoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryViewController.m; sourceTree = "<group>"; };
 		3A6182F70EC379F80010C928 /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
 		3A6182F80EC379F80010C928 /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
-		3A695F9F0F9E3C4B0053D0C7 /* photocontrol-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photocontrol-icon.png"; sourceTree = "<group>"; };
+		3A695F9F0F9E3C4B0053D0C7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		3A8ADAAF0F1A92900016647F /* ScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollView.m; sourceTree = "<group>"; };
 		3A8ADAB00F1A92900016647F /* ScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollView.h; sourceTree = "<group>"; };
 		3AB02CD50F3FA37C009FB5BF /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };
@@ -156,7 +148,7 @@
 			children = (
 				1D3623240D0F684500981E51 /* ClientAppDelegate.h */,
 				1D3623250D0F684500981E51 /* ClientAppDelegate.m */,
-				28A0AAE50D9B0CCF005BE974 /* photocontrol_client_Prefix.pch */,
+				28A0AAE50D9B0CCF005BE974 /* photocontrol_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -194,15 +186,11 @@
 				3AFCA80A0FA0FD56001C437E /* introduction.png */,
 				3AFCA8100FA10783001C437E /* introduction-de.png */,
 				3AFCA8460FA10ECB001C437E /* background.png */,
-				3A695F9F0F9E3C4B0053D0C7 /* photocontrol-icon.png */,
+				3A695F9F0F9E3C4B0053D0C7 /* Icon.png */,
 				3AB02CD50F3FA37C009FB5BF /* help.png */,
 				3AB02CD60F3FA37C009FB5BF /* about.png */,
-				3A1250D40EDA1FA50018C8EE /* coverflow_icon.png */,
 				3A1250DA0EDA26270018C8EE /* iMac.png */,
-				3A1250A10EDA1A5B0018C8EE /* synchron_icon.png */,
 				3AE8E5190EC3AF2F00ED05CD /* folder.png */,
-				3A1250E00EDAC9270018C8EE /* icon_synchron.png */,
-				3A1250E10EDAC9270018C8EE /* icon_asynchron.png */,
 				3AE8E5170EC3AF1100ED05CD /* computer.png */,
 				3AE8E5150EC3AEB000ED05CD /* picture.png */,
 			);
@@ -221,9 +209,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* photocontrol_client */ = {
+		1D6058900D05DD3D006BFB54 /* photocontrol */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "photocontrol_client" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "photocontrol" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -233,7 +221,7 @@
 			);
 			dependencies = (
 			);
-			name = photocontrol_client;
+			name = photocontrol;
 			productName = photocontrol_client;
 			productReference = 1D6058910D05DD3D006BFB54 /* photocontrol.app */;
 			productType = "com.apple.product-type.application";
@@ -243,8 +231,8 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "photocontrol_client" */;
-			compatibilityVersion = "Xcode 3.1";
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "photocontrol" */;
+			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -258,7 +246,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* photocontrol_client */,
+				1D6058900D05DD3D006BFB54 /* photocontrol */,
 			);
 		};
 /* End PBXProject section */
@@ -273,15 +261,11 @@
 				3AE8E5160EC3AEB000ED05CD /* picture.png in Resources */,
 				3AE8E5180EC3AF1100ED05CD /* computer.png in Resources */,
 				3AE8E51A0EC3AF2F00ED05CD /* folder.png in Resources */,
-				3A1250A20EDA1A5B0018C8EE /* synchron_icon.png in Resources */,
-				3A1250D50EDA1FA50018C8EE /* coverflow_icon.png in Resources */,
 				3A1250DB0EDA26270018C8EE /* iMac.png in Resources */,
-				3A1250E20EDAC9270018C8EE /* icon_synchron.png in Resources */,
-				3A1250E30EDAC9270018C8EE /* icon_asynchron.png in Resources */,
 				3AB02CD70F3FA37C009FB5BF /* help.png in Resources */,
 				3AB02CD80F3FA37C009FB5BF /* about.png in Resources */,
 				3AB02D660F3FA812009FB5BF /* Localizable.strings in Resources */,
-				3A695FA00F9E3C4B0053D0C7 /* photocontrol-icon.png in Resources */,
+				3A695FA00F9E3C4B0053D0C7 /* Icon.png in Resources */,
 				3AFCA80B0FA0FD56001C437E /* introduction.png in Resources */,
 				3AFCA8120FA10783001C437E /* introduction-de.png in Resources */,
 				3AFCA8470FA10ECB001C437E /* background.png in Resources */,
@@ -335,7 +319,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = photocontrol_client_Prefix.pch;
+				GCC_PREFIX_HEADER = photocontrol_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = photocontrol;
 			};
@@ -347,24 +331,21 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = photocontrol_client_Prefix.pch;
+				GCC_PREFIX_HEADER = photocontrol_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				PRODUCT_NAME = photocontrol_client;
+				PRODUCT_NAME = photocontrol;
 			};
 			name = Release;
 		};
 		3A441A1A0FA5279300EA120B /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Wolfgang König";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "282BBAE4-68CB-4287-AE98-8226EBDAD94E";
-				SDKROOT = iphoneos3.1;
 			};
 			name = Distribution;
 		};
@@ -372,10 +353,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = photocontrol_client_Prefix.pch;
+				GCC_PREFIX_HEADER = photocontrol_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = photocontrol;
 			};
@@ -413,7 +393,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "photocontrol_client" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "photocontrol" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -421,9 +401,9 @@
 				3A441A1B0FA5279300EA120B /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Distribution;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "photocontrol_client" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "photocontrol" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
@@ -431,7 +411,7 @@
 				3A441A1A0FA5279300EA120B /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Distribution;
 		};
 /* End XCConfigurationList section */
 	};
