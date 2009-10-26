@@ -125,7 +125,7 @@ enum {
 				[[cell textLabel] setText: [netService name]];
 			else
 				[[cell textLabel] setText: NSLocalizedString(@"DefaultPhotoServer", @"default name of an photo control server")];
-				[[cell imageView] setImage: [UIImage imageNamed:@"iMac.png"]];
+				[[cell imageView] setImage: [UIImage imageNamed:@"computer.png"]];
 				[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 		} else {
 			[[cell textLabel] setText: NSLocalizedString(@"NoServerFound", @"No server found")];
