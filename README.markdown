@@ -13,7 +13,7 @@ With photocontrol you can control a presentation of photos with your iPhone or w
 Screenshots
 -----------
 
-#### Application on the iPhone:
+### Application on the iPhone:
 
 <p>
 	<a href="http://photocontrol.net/images/app/iPhone_1.png" title="photocontrol servers are discovered automatically"><img src="http://photocontrol.net/images/app/iPhone_1_thumb.png" alt="iPhone screenshot: start screen" /></a>
@@ -40,5 +40,5 @@ The code is licensed under the [gpl v3][gnu].
 [github]: http://github.com/wulfovitch/photocontrol "github photocntrol"
 [gnu]: http://www.gnu.org/licenses/gpl.html "GPL v3"
 [appstore-link]: http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=314133918&amp;mt=8 "iTunes App-Store Link"
-[downloads]: http://photocontrol.net/downloads/ "Download Section"
+[downloads]: http://photocontrol.net/download/ "Download Section"
 [photocontrol-server]: http://github.com/wulfovitch/photocontrol-server
