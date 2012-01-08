@@ -1,0 +1,225 @@
+html {
+	background: #555 url(/images/background.png) repeat-x fixed;
+}
+
+body {
+	font: 13px/1.5 "Lucida Grande", Lucida, Verdana, sans-serif;
+	color: #eee;
+	margin: 0 0 0 0;
+	padding: 50px 0 0 0;
+	line-height: 1.6em;
+}
+
+img {
+	border: 0px;
+}
+
+a, a:visited, a:active {
+	color : #eeeeee;
+	text-decoration : none;
+}
+
+a:hover {
+	color : #437fda;
+	text-decoration : underline;
+}
+
+form fieldset {
+	border: none;
+}
+/**
+ * Headers
+ ************/
+
+h1 {
+	font: normal 36px "Helvetica Neue", Helvetica, Geneva, sans-serif;
+	color: #fff;
+	text-transform: lowercase;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.75);
+	margin: 0 0 20px;
+}
+
+h1 span {
+	color: rgba(70,180,255,0.8);
+}
+
+h3, h4 {
+	font-size: 1.1em;
+	margin-bottom: 0;
+}
+
+
+
+/**
+ * basic styling
+ ************/
+
+#sidebar {
+	float: left;
+	text-align: left;
+	padding-top: 380px;
+	padding-left: 30px;
+}
+
+#main {
+	background: url(/images/photocontrol-icon-website.png) no-repeat 0 0;
+	display: block;
+	min-height: 300px;
+	max-width: 600px;
+	padding: 20px 65px 50px 280px;
+}
+
+p {
+	color: #bbb;
+}
+
+p strong {
+	color: #fff;
+}
+
+li, ul {
+	color: #bbb;
+}
+
+/**
+ *
+ ************/
+
+.right_column {
+	float: right;
+}
+
+.left_column {
+	float: left;
+}
+
+/**
+ * footer
+ ************/
+
+#footer {
+	background-color: #3f3f3f; /* First for Firefox */
+	background-color: rgba(62,62,62,0.95);
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	margin: 0px;
+	padding-left: 0px;
+}
+
+#footer p {
+	font-size: 11px;
+	color: rgba(255,255,255,0.5);
+	margin: 0;
+	padding: 5px 80px 5px 280px;
+}
+
+#footer p a {
+	color: #eee;
+}
+
+
+/**
+ * Menu
+ ************/
+#menu {
+	background : #333;
+}
+#menu ul {
+	padding : 0.1em;
+	margin: 0;
+}
+#menu li {
+	display : inline;
+}
+#menu li a {
+	padding : 0em 1.0em;
+}
+#menu li a:hover {
+	color: #437fda;
+}
+
+/* active menu item highlight*/
+#menu.home li.home a,
+#menu.news li.news a,
+#menu.download li.download a,
+#menu.faq li.faq a,
+#menu.about li.about a {
+	font-weight: bold;
+	color: #fff;
+}
+
+/**
+ * News
+ ************/
+span.news_date_left {
+	font-weight: bold;
+	font-size: 1.2em;
+	text-align: left;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	float: left;
+}
+
+span.news_date {
+	text-align: right;
+	font-style: italic;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	float: right;
+}
+
+/**
+ * jQuery Bubble
+ ************/
+
+.download_listing {
+	margin: 120px 0 0;
+	padding: 0;
+	list-style: none;
+}
+.download_listing li {
+	padding: 0;
+	margin: 0 2px;
+	float: left;
+	position: relative;
+}
+.download_listing a {
+	padding: 5px 60px 20px 65px;
+	display: block;
+	color: #000000;
+	text-decoration: none;
+	font-weight: normal;
+	color: #fff;
+	font-size: 1.0em;
+	background: url(/images/photocontrol-icon.png) no-repeat;
+}
+.download_listing a span {
+	font-weight: normal;
+	font-size: 1.5em;
+	letter-spacing: 0.2em;
+}
+.download_listing li table {
+	font: 14px/1.5 Verdana, "Lucida Grande", Lucida, sans-serif;
+	margin-left: 12px;
+	background: url(/images/hover_bubble.png) no-repeat;
+	width: 290px;
+	height: 45px;
+	position: absolute;
+	top: -85px;
+	left: -15px;
+	text-align: left;
+	padding: 5px 12px 22px 12px;
+	line-height: 1.2;
+	font-style: normal;
+	z-index: 2;
+	display: none;
+	color: black;
+	font-size: 0.75em;
+}
+td.description {
+	color: #777;
+	vertical-align: top;
+	text-align: right;
+}

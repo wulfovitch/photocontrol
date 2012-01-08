@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+    <loc>http://photocontrol.net</loc>
+    <lastmod>2011-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>http://photocontrol.net/news/available-again/</loc>
+    <lastmod>2010-05-21</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://photocontrol.net/news/photocontrol-not-available-at-the-moment/</loc>
+    <lastmod>2010-05-04</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://photocontrol.net/news/photocontrol-v1.1-released/</loc>
+    <lastmod>2009-11-07</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://photocontrol.net/news/photocontrol-is-out-now/</loc>
+    <lastmod>2009-05-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://photocontrol.net/news/submitted-iphone-application-to-the-app-store/</loc>
+    <lastmod>2009-04-27</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://photocontrol.net/download/</loc>
+    <lastmod>2011-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://photocontrol.net/faq/</loc>
+    <lastmod>2011-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://photocontrol.net/about/</loc>
+    <lastmod>2009-11-01</lastmod>
+  </url>
+</urlset>

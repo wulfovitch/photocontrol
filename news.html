@@ -1,0 +1,25 @@
+---
+layout: default
+permalink: /news/
+title: News
+page_name: news
+---
+
+<p style="float: right; padding: 0px; margin: 0px;">
+	<img alt="feed icon" src="/images/feed_icon.png" /> <a href="/atom.xml">RSS Feed</a>	
+</p>
+
+<h2>{{ page.title }}</h2>
+
+{% for post in site.posts %}
+
+  <p>
+		<span class="news_date_left"><a href="{{ post.url }}" title="[Permalink] {{ post.title }}">{{ post.title }}</a></span>
+		<span class="news_date">{{ post.date | date_to_long_string }}</span>
+  </p>
+	<p style="border-bottom: 1px solid #888;">&nbsp;</p>
+	{{ post.content }}
+
+<br />
+ 
+{% endfor %}

@@ -1,0 +1,48 @@
+---
+layout: default
+page_name: news
+---
+	<h2>
+		News
+	</h2>
+	
+	<p>
+		<span class="news_date_left">
+			<a href="{{ page.url }}" title="[Permalink] {{ page.title }}">{{ page.title }}</a>
+		</span>
+		<span class="news_date">
+			{{ page.date | date_to_long_string }}
+		</span>
+	</p>
+	<p style="border-bottom: 1px solid #888;">&nbsp;</p>
+	{{ content }}
+
+<div class="paginator">
+	
+	<br />
+	<br />
+	
+  <div class="left_column">
+    {% if page.previous %}
+      <a href="{{ page.previous.url }}" title="{{ page.previous.title }}">&laquo; previous news item</a>
+    {% endif %}
+  </div>
+ 
+  <div class="right_column">
+    {% if page.next %}
+      <a href="{{ page.next.url }}" title="{{ page.next.title }}">next news item &raquo;</a>
+    {% endif %}
+  </div>
+  
+  <div class="clear_both">
+  </div>
+  <br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />&nbsp;
+</div>
+

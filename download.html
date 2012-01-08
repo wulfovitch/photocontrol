@@ -1,0 +1,84 @@
+---
+layout: page
+title: Downloads
+permalink: /download/
+page_name: download
+---
+
+<ul class="download_listing">
+	<li>
+		<a href="http://photocontrol.net/download/photocontrol_server_1.1.zip">
+			<span>Download</span><br /> 
+			photocontrol server v1.1
+		</a>		
+		<table>
+			<tr>
+				<td class="description">file:</td>
+				<td>photocontrol_server_1.1.zip</td>
+			</tr>
+			<tr>
+				<td class="description">size:</td>
+				<td>1mb</td>
+			</tr>
+			<tr>
+				<td class="description">requirement:</td>
+				<td>Mac OS X 10.6+ (Snow Leopard)</td>
+			</tr>
+		</table>
+	</li>
+	<li>
+		<a href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=314133918&amp;mt=8">
+			<span>Download</span><br /> 
+			photocontrol client v1.1
+		</a>
+		<table>
+			<tr>
+				<td class="description">availability:</td>
+				<td>via Apple's App-Store</td>
+			</tr>
+			<tr>
+				<td class="description">link:</td>
+				<td>iTunes Store link</td>
+			</tr>
+			<tr>
+				<td class="description">requirement:</td>
+				<td>iPhone / iPod Touch (Firmware 3.1+)</td>
+			</tr>
+		</table>
+	</li>
+</ul>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<h2>
+	Download the source!
+</h2>
+
+<p>
+	photocontrol is open source software. You can obtain the code for it at github:
+</p>
+	<ul>
+		<li><a href="http://github.com/wulfovitch/photocontrol">photocontrol client source</a></li>
+		<li><a href="http://github.com/wulfovitch/photocontrol-server">photocontrol server source</a></li>
+	</ul>
+<p>
+	The source code is licensed under the <a href="http://www.gnu.org/licenses/gpl.html">gpl v3</a>.
+</p>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".download_listing a").hover(function() {
+		$(this).next("table").animate({opacity: "show", top: "-75"}, "slow");
+	}, function() {
+		$(this).next("table").animate({opacity: "hide", top: "-85"}, "fast");
+	});
+
+
+});
+</script>

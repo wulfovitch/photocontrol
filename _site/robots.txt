@@ -1,0 +1,4 @@
+Sitemap: http://photocontrol.net/sitemap.xml
+ 
+User-agent: *
+Disallow: /images/

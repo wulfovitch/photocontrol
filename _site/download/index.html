@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>photocontrol.net - Downloads</title>
+	
+	<meta name="viewport" content="width=600"/>
+	<meta name="viewport" content="initial-scale=0.53, user-scalable=yes"/>
+	
+	<link rel="stylesheet" href="/stylesheets/photocontrol.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="/stylesheets/photocontrol-iPhone.css" media="only screen and (max-device-width: 480px)" type="text/css" />
+	<link rel="stylesheet" href="/images/fancybox/jquery.fancybox-1.2.5.css" type="text/css" media="screen" />
+	
+	<script src="/javascripts/jquery.js" type="text/javascript"></script>
+	<script src="/javascripts/jquery.fancybox-1.2.5.pack.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("a.zoom").fancybox({
+				'overlayShow':		false
+			});
+		});
+	</script>
+	
+	
+	<link rel="alternate" title="photocontrol.net feed" type="application/atom+xml" href="/atom.xml" />
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+
+<body onload="setupZoom()">
+	
+	<div id="github-ribbon">
+		<a href="http://github.com/wulfovitch/photocontrol">
+			<img style="position: absolute; top: 0; right: 0; border: 0;" src="/images/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" />
+		</a>
+	</div>
+
+	<div id="sidebar">
+	</div>
+	
+	<div id="main">
+		
+		<div id="header">
+			<h1>photocontrol <span>1.1</span></h1>
+		</div>
+		
+		<div id="menu" class='download'>
+			<ul>
+				<li class="home"><a href="/">Home</a></li>
+				<li class="news"><a href="/news/">News</a></li>
+				<li class="download"><a href="/download/">Download</a></li>
+				<li class="faq"><a href="/faq/">FAQ</a></li>
+				<li class="about"><a href="/about/">About</a></li>
+			</ul>
+		</div>
+		
+		<div id="content">
+			
+			<div class="post">
+ 
+    <h2>Downloads</h2>
+ 
+    <ul class="download_listing">
+	<li>
+		<a href="http://photocontrol.net/download/photocontrol_server_1.1.zip">
+			<span>Download</span><br /> 
+			photocontrol server v1.1
+		</a>		
+		<table>
+			<tr>
+				<td class="description">file:</td>
+				<td>photocontrol_server_1.1.zip</td>
+			</tr>
+			<tr>
+				<td class="description">size:</td>
+				<td>1mb</td>
+			</tr>
+			<tr>
+				<td class="description">requirement:</td>
+				<td>Mac OS X 10.6+ (Snow Leopard)</td>
+			</tr>
+		</table>
+	</li>
+	<li>
+		<a href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=314133918&amp;mt=8">
+			<span>Download</span><br /> 
+			photocontrol client v1.1
+		</a>
+		<table>
+			<tr>
+				<td class="description">availability:</td>
+				<td>via Apple's App-Store</td>
+			</tr>
+			<tr>
+				<td class="description">link:</td>
+				<td>iTunes Store link</td>
+			</tr>
+			<tr>
+				<td class="description">requirement:</td>
+				<td>iPhone / iPod Touch (Firmware 3.1+)</td>
+			</tr>
+		</table>
+	</li>
+</ul>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<h2>
+	Download the source!
+</h2>
+
+<p>
+	photocontrol is open source software. You can obtain the code for it at github:
+</p>
+	<ul>
+		<li><a href="http://github.com/wulfovitch/photocontrol">photocontrol client source</a></li>
+		<li><a href="http://github.com/wulfovitch/photocontrol-server">photocontrol server source</a></li>
+	</ul>
+<p>
+	The source code is licensed under the <a href="http://www.gnu.org/licenses/gpl.html">gpl v3</a>.
+</p>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".download_listing a").hover(function() {
+		$(this).next("table").animate({opacity: "show", top: "-75"}, "slow");
+	}, function() {
+		$(this).next("table").animate({opacity: "hide", top: "-85"}, "fast");
+	});
+
+
+});
+</script>
+ 
+</div>      
+
+			<div style="clear: both;"></div>
+		</div>
+		
+	</div>
+	
+	<div id="footer">
+		<p>
+			&copy; 2009 Wolfgang K&ouml;nig - <a href="http://twitter.com/photocontrol">twitter</a> - <script type="text/javascript">
+<!--
+// hide script
+var vdot = "hjdfsh"
+var v5 = "tocon";
+var v4 = "pho";
+var v1 = "inf";
+var vb = "trolhjdfshn";
+var v6 = decodeString(vb);
+var v7 = "et";
+var v2 = "o&#x40;"
+var v3 = "%6d%61%69%6C"
+var v9 = "%74%6F%3A"
+var v0 = v1 + v2 + v4 + v5 + v6 + v7;
+var va = decodeURIComponent(v3 + v9) + v0
+document.write(v0.link(va));
+// -->
+function decodeString(myEncStr) {
+	var tmp;
+	tmp = myEncStr.replace( eval("/" + vdot + "/g"), ".");
+	return(tmp);
+}
+</script>
+		</p>
+	</div>
+</body>
+</html>

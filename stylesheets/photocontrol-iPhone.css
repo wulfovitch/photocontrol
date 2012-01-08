@@ -1,0 +1,138 @@
+body {
+	font: 13px/1.5 "Lucida Grande", Lucida, Verdana, sans-serif;
+	color: #eee;
+	background: #555;
+	margin: 0 0 0 0;
+	padding: 10px 0 0 0;
+	line-height: 1.6em;
+}
+
+#header {
+	padding: 15px 20px 15px 75px;
+}
+
+#sidebar {
+	display: none;
+}
+
+#main {
+	background: url(/images/photocontrol-icon-website_small.png) no-repeat 0 0;
+	display: block;
+	min-height: 300px;
+	padding: 0px;
+	margin: 0px;
+}
+
+#content {
+	padding: 20px 20px 0px 20px;
+}
+
+#github-ribbon {
+	display: none;
+}
+
+#menu ul {
+	padding : 0.1em;
+	margin: 0;
+	text-align: center;
+}
+
+/**
+ * News
+ ************/
+span.news_date_left {
+	font-weight: bold;
+	font-size: 1.2em;
+	text-align: left;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	float: left;
+}
+
+span.news_date {
+	text-align: right;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	float: right;
+}
+
+/**
+ * footer
+ ************/
+
+#footer {
+	background-color: #3f3f3f; /* First for Firefox */
+	background-color: rgba(62,62,62,0.95);
+	position: relative;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	margin: 0px;
+	padding-left: 0px;
+}
+
+#footer p {
+	font-size: 11px;
+	color: rgba(255,255,255,0.5);
+	background: none;
+	margin: 0;
+	padding: 5px 10px 5px 15px;
+	text-align: center;
+}
+
+#footer p a {
+	color: #eee;
+}
+
+/**
+ * jQuery Bubble
+ ************/
+
+.download_listing {
+	margin: 50px 0px 40px 150px;
+	padding: 0;
+	list-style: none;
+}
+.download_listing li {
+	padding: 0;
+	margin: 0 2px;
+	float: left;
+	position: relative;
+}
+.download_listing a {
+	padding: 5px 60px 50px 65px;
+	display: block;
+	color: #000000;
+	text-decoration: none;
+	font-weight: normal;
+	color: #fff;
+	font-size: 1.0em;
+	background: url(/images/photocontrol-icon.png) no-repeat;
+}
+.download_listing a span {
+	font-weight: normal;
+	font-size: 1.5em;
+	letter-spacing: 0.2em;
+}
+.download_listing li table {
+	margin-left: 12px;
+	background: url(/images/hover_bubble.png) no-repeat;
+	width: 200px;
+	height: 45px;
+	position: absolute;
+	top: -85px;
+	left: -15px;
+	text-align: left;
+	padding: 8px 12px 22px 12px;
+	line-height: 1.2;
+	font-style: normal;
+	z-index: 2;
+	display: none;
+	color: black;
+	font-size: 0.75em;
+}
+td.description {
+	color: #777;
+	vertical-align: top;
+	text-align: right;
+}

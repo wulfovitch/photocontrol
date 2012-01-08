@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>photocontrol.net</title>
+ <link href="http://photocontrol.net/atom.xml" rel="self"/>
+ <link href="http://photocontrol.net/"/>
+ <updated>2011-12-21T23:36:25+01:00</updated>
+ <id>http://photocontrol.net</id>
+ <author>
+   <name>Wolfgang König</name>
+ </author>
+ 
+ 
+ <entry>
+   <title>Available again!</title>
+   <link href="http://photocontrol.net/news/available-again/"/>
+   <updated>2010-05-21T00:00:00+02:00</updated>
+   <id>http://photocontrol.net/news/available-again</id>
+   <content type="html">&lt;p&gt;I forgot to post this, but photocontrol is available again in the app store. It took apple six days to flip a bit in their database. I don&amp;#8217;t want to imagine, if something like this happens to a developer, who depends on the sales in the app store. What a horrible picture!&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>photocontrol is not available at the moment</title>
+   <link href="http://photocontrol.net/news/photocontrol-not-available-at-the-moment/"/>
+   <updated>2010-05-04T00:00:00+02:00</updated>
+   <id>http://photocontrol.net/news/photocontrol-not-available-at-the-moment</id>
+   <content type="html">&lt;p&gt;photocontrol is not available in the app store at the moment. If you want to know why, have a look at &lt;a href='http://wulfovitch.net/2010/05/iTunes-Connect-and-Umlauts/'&gt;my blog post&lt;/a&gt; which explains the reasons. I hope it will be available again soon!&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>photocontrol v1.1 released!</title>
+   <link href="http://photocontrol.net/news/photocontrol-v1.1-released/"/>
+   <updated>2009-11-07T00:00:00+01:00</updated>
+   <id>http://photocontrol.net/news/photocontrol-v1.1-released</id>
+   <content type="html">&lt;p&gt;&lt;a href='/download/' title='Download-Section'&gt;Version 1.1&lt;/a&gt; of photocontrol has just been released. The changes are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The release fixes the issue, that pictures weren&amp;#8217;t displayed, if the file or folder name contained special characters in it (for instance: umlauts, spaces, etc.).&lt;/li&gt;
+
+&lt;li&gt;An improved application icon.&lt;/li&gt;
+
+&lt;li&gt;The release is now requires iPhone Version 3.1.&lt;/li&gt;
+
+&lt;li&gt;The server application requires now Mac OS 10.6 (Snow Leopard).&lt;/li&gt;
+
+&lt;li&gt;The server application is now fully 64Bit compatible.&lt;/li&gt;
+
+&lt;li&gt;photocontrol is now open source and the source is available on &lt;a href='http://github.com/wulfovitch/photocontrol' title='github photocontrol'&gt;github&lt;/a&gt;! The code is released under the gpl v3!&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>photocontrol is out now!</title>
+   <link href="http://photocontrol.net/news/photocontrol-is-out-now/"/>
+   <updated>2009-05-03T00:00:00+02:00</updated>
+   <id>http://photocontrol.net/news/photocontrol-is-out-now</id>
+   <content type="html">&lt;p&gt;photocontrol for iPhone and iPod Touch is now approved by Apple and can now be downloaded to your iPhone or iPod Touch via the &lt;a href='http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=314133918&amp;amp;mt=8'&gt;App-Store&lt;/a&gt; (iTunes link). Try it out now!&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Submitted iPhone Application to the App-Store</title>
+   <link href="http://photocontrol.net/news/submitted-iphone-application-to-the-app-store/"/>
+   <updated>2009-04-27T00:00:00+02:00</updated>
+   <id>http://photocontrol.net/news/submitted-iphone-application-to-the-app-store</id>
+   <content type="html">&lt;p&gt;Just submitted the photocontrol Application for the iPhone and the iPod Touch to the App-Store. Hopefully it will get approved at the first try. Wish me luck!&lt;/p&gt;
+
+&lt;p&gt;In the meanwhile you can try the server application, which can be found in the &lt;a href='/download/' title='Download-Section'&gt;downloads section&lt;/a&gt; ! But you will not have a lot fun with it without the client application on your iPhone or iPod Touch&amp;#8230;&lt;/p&gt;</content>
+ </entry>
+ 
+ 
+</feed>

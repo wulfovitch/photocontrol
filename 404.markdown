@@ -1,0 +1,16 @@
+---
+layout: page
+title: Page not Found! (Error 404)
+permalink: /404/
+---
+Ops! It seems, that this page doesn't exist!
+
+Perhaps you want to search this site via google?
+
+<form action="http://www.google.com/search" id="search" method="get">
+	<fieldset>
+	  <input class="text" name="q" type="text" />
+	  <input name="sitesearch" type="hidden" value="photocontrol.net" />
+	  <input class="button" type="submit" value="Google" />
+	</fieldset>
+</form>

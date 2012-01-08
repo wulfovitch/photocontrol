@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteBase /
+ 
+# 404
+ErrorDocument 404 /404/
+
+# Redirect legacy feed url
+Redirect /feed/ /atom.xml
+Redirect /feed  /atom.xml
+
+# Redirect legacy appcast url
+Redirect /appcast/ /appcast.xml
+Redirect /appcast  /appcast.xml

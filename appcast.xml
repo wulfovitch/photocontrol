@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+   <channel>
+      <title>Changelog for photocontrol server</title>
+      <link>http://photocontrol/appcast</link>
+      <description>photocontrol server appcast</description>
+      <language>en</language>
+	      <item>
+	         <title>Version 1.1</title>
+						<description>
+							<![CDATA[ 
+								<h1>Update to Version 1.1</h1>
+								<ul>
+									<li>Attention: This release is only compatible to Mac OS X 10.6 (Snow Leopard). <span style="color: #EE0000; font-weight: bold;">Don't upgrade if you are still using Mac OS X 10.5 (Leopard)!!!</span></li>
+									<li>You also need to update the iPhone Application of photocontrol to version 1.1 or both applications won't work together.</li>
+									<li>Now fully 64bit compatible!</li>
+									<li>This release fixes problems with special characters in file and/or directory names. Now they should appear correctly on the displaying screen.</li>
+								</ul>
+							]]>
+						</description>
+	         <pubDate>Wed, 07 Nov 2009 16:00:11 +0100</pubDate>
+	         <enclosure url="http://photocontrol.net/download/photocontrol_server_1.1.zip" sparkle:version="1.1" length="1015311" type="application/octet-stream" sparkle:dsaSignature="MC0CFDZBBz80yyGtnNssQPwbnsXJ4YERAhUAhB9FDgQvUTxuKSId9r5amtkvo9k=" />
+	      </item>
+         <item>
+            <title>Version 1.0</title>
+						<description><![CDATA[ <h1>Initial Release</h1> ]]></description>
+            <pubDate>Wed, 26 Apr 2009 23:40:11 +0100</pubDate>
+            <enclosure url="http://photocontrol.net/download/photocontrol_server_1.0.zip" sparkle:version="1.0" length="1025254" type="application/octet-stream" sparkle:dsaSignature="MCwCFGsWH4I7zYdUwAYjP+0SPNU/XEg+AhQ9MapFopqC2LoWjN0if2H5yGCaZg==" />
+         </item>
+   </channel>
+</rss>
